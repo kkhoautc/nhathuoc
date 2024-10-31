@@ -121,7 +121,7 @@ var openModalBtn = document.getElementById("openModal");
 var openModal1Btn = document.getElementById("openModal1");
 
 // Nút đóng cho từng modal
-var closeBtns = document.getElementsByClassName("close");
+var closeBtns = document.getElementsByClassName("close1");
 
 // Mở các modal
 openModalBtn.onclick = function() {
