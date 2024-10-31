@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Tư vấn thuốc</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../wstyle.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <meta http-equiv="refresh" content="60">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <style>
+.advise {
+    width: 61%;
+    margin: 0 auto;
+}
+
+.consultation-section {
+    display: flex;
+    justify-content: space-between;
+    background-color: white;
+    border: 1px solid #dee2e6;
+    padding: 20px;
+    border-radius: 8px;
+    border: none;
+}
+
+.consultation-box {
+    width: 65%;
+}
+.consultation-box h2 {
+    margin-left: 10px;
+}
+.box-color {
+    background-color:#0096d6;
+    padding: 15px;
+    border-radius: 10px;
+}
+.box-color h3 {
+    color: white;
+}
+
+.box-color p {
+    font-size: 14px;
+    color: white;
+}
+
+.search-bar {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.search input {
+    width: 80%;
+    padding: 10px;
+    border: 1px solid #dee2e6;
+    border-radius: 5px;
+    margin-bottom: 40px;
+}
+
+.search button {
+    background-color: #0d6efd;
+    border: none;
+    color: white;
+    padding: 10px;
+    margin-left: 5px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.side-options {
+    width: 30%;
+}
+
+.option {
+    background-color: #f8f9fa;
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    height: 125px;
+}
+
+.option h4 {
+    font-size: 16px;
+    color: #333;
+    margin-left: 50px ;
+}
+
+.option p {
+    font-size: 14px;
+    color: #666;
+    margin: 10px 0;
+    margin-left: 50px;
+}
+
+.option a {
+    display: block;
+    color: #007bff;
+    text-decoration: none;
+    margin-left:  50px;
+    font-weight: bold;
+}
+
+.option:first-child {
+    background-color: #fff7f2;
+    border-color: #ffc107;
+}
+
+.option:last-child {
+    background-color: #f2f8ff;
+    border-color: #007bff;
+}
+.hr-step {
+    width: 100%;
+    padding: 5px;
+    background-color: #dedede;
+    border: none;
+}
+.step-container {
+    display: flex;
+    justify-content: space-around;
+    padding: 40px;
+    margin: 0 330px;
+    
+}
+.step {
+    border: none;
+    padding: 20px;
+    border-radius: 5px;
+    width: 500px;
+}
+.note {
+    background-color: green;
+    color: white;
+    border-radius: 10px;
+    padding: 5px;
+}
+
+.distance {
+    height: 1px;
+}
+
+.step-header {
+    font-weight: bold;
+    margin-bottom: 10px;
+    height: 40px
+}
+.step-content {
+    margin-bottom: 20px;
+}
+.step-image {
+    width: 100%;
+    height: 160px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.pharmacy-info {
+    margin: 0 380px;
+}
+.footer .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+
+}
+.footer{
+    background-color: #dedede;
+    padding: 20px;
+}
+.footer .container .listed{
+    width: 100%;
+}
+footer .container .listed .list{
+    width: 20%;
+    line-height: 30px;
+    float: left;
+    margin: 2%;
+}
+footer .container .listed .list a{
+    text-decoration: none;
+    margin-top: 20px;
+    padding-bottom: 5px;
+    color: rgb(44, 40, 40);
+    font-weight: 12px;
+}
+footer .container .listed .list a:hover{
+    color: blue;
+}
+.footer .container .lis{
+    width: 30%;
+    float: left;
+}
+footer .container .listed .list ul li{
+    list-style-type: none;
+}
+button:hover{
+    color: blue;
+    cursor: pointer;
+}
+.hr-footer{
+    width: 100%;
+    padding: 5px;
+    background-color: #005f8a;
+}
+    </style>
+</head>
+
+
+<body>
+    <header class="header">
+        <div class="container">
+            <div style="width: 20%;" class="left">
+                <a href="../index.html"><img class="logo" src="../images/logo.jpg" alt="logo nha thuoc" style="width: 19%;"></a>
+                <a style="text-decoration: none; color: black;" href="../index.html"><span style="text-align: center;font-size: 25px;">Nhà Thuốc</span></a>
+            </div>
+            <div class="search-bar">
+                <input type="text" placeholder="Tìm thuốc, triệu chứng, vitamin và thực phẩm chức năng" class="search-input">
+                <button class="search-btn">Search</button>
+                
+                <button style="background-color: #0096d6;border: none;margin-left: 20px;" id="opencnoti"><img style="width: 30px;" src="../images/noti.png" alt="thông báo" class="noti"></button>
+                <a href="../cart.html"><img class="noti" src="../images/cart.png" alt="giỏ hàng"></a> 
+                <div class="overlay" id='popnoti'>
+                    <div class="popup" style="height: 60%;">
+                        <button id="closenoti" style="float: right;">x</button>
+                        <h3>Thông báo</h3>
+                        <br>
+                      <p>bạn khong co thong bao nao</p>
+                    </div>
+                    </div>
+            </div>
+            <div class="auth-buttons">
+                    <button class="btn auth-btn" id="openPopup">Đăng nhập</button>
+                    <div class="overlay" id="popupOverlay">
+                        <div class="popup">
+                            <button id="closePopup" style="float: right;">x</button>
+                          <h2>Đăng nhập</h2>
+                          <form>
+                            <input class="nhap-text required" type="text" name="fname" placeholder="Tên tài khoản" id="namedn"><br>
+                            <input class="nhap-text required" type="text" name="fname" placeholder="Mật khẩu" id="passdn"><br>
+                          </form>
+                          <a style="margin-right: 50px; float: right;" href="http://127.0.0.1:5500/quenmk.html">Quên mật khẩu ?</a>
+                          <br><br>
+                          <button class="dang-nhap" onclick="dangnhap()">Đăng nhập ngay</button><br>
+                          <button class="dang-ki" id="dkOpen">Tạo tài khoản mới</button>
+                          <div class="overlaydk" id="dkiOverlay">
+                            <div class="popupdk">
+                                <button id="dkClose" style="float: right;">x</button>
+                              <h2>Đăng Kí</h2>
+                              <form name="myForm" action="" onsubmit="return validateForm()" method="post">
+                                <input class="nhap-text" type="text" name="fname" placeholder="Tên tài khoản">
+                                <input class="nhap-text" type="text" name="fname" placeholder="Mật khẩu">
+                                <input type="text" class="nhap-text" placeholder="Nhập lại mật khẩu">
+                                <input type="text" class="nhap-text" placeholder="Nhập email của bạn">
+                              </form>
+                              <br><br>
+                              <button class="dang-ki" id="dkClose" onclick="dangki()">Đăng Kí</button><br>
+                          <br><br>
+                        </div>
+                        </div>
+                        
+                    </div>
+            </div>
+            
+        </div>
+    
+        </header>
+        <nav class="nav">
+            <div class="container">
+                <div class="menu">
+                    <a href="#">
+                        Danh mục
+                       </a>
+                       <a href="../nav/thuoc.html">
+                        Thuốc
+                       </a>
+                       <a href="../nav/tracuubenh.html">
+                        Trả cứu bệnh
+                       </a>
+                       <a href="../nav/thucphamchucnang.html">
+                        Thực phẩm chức năng
+                       </a>
+                       <a href="../nav/mevabe.html">
+                        Mẹ và bé
+                       </a>
+                       <a href="../nav/doanhnghiep.html">
+                        Doanh nghiệp
+                       </a>
+                       <a href="../nav/chamsocsacdep.html">
+                        Chăm sóc sắc đẹp
+                       </a>
+                       <a href="../nav/chamsoccanhan.html">
+                        Chăm sóc cá nhân
+                       </a>
+                </div>
+            </div>
+        </nav><br>
+    <div class="advise">
+        <div class="consultation-section">
+            <div class="consultation-box">
+                <h2>Tư vấn thuốc</h2>
+                <div class="box-color">
+                    <h3>Thêm sản phẩm cần tư vấn</h3>
+                    <p>Gửi thông tin sản phẩm và thuốc, dược sĩ sẽ gọi điện thoại tư vấn và giao hàng tận nơi.</p>
+                    <div class="search">
+                        <input type="text" placeholder="Tìm sản phẩm bạn cần ở đây">
+                        <button><i class="fa fa-search"></i></button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="side-options">
+                <div class="option">
+                    <h4>Đặt hàng qua tổng đài</h4>
+                    <p>Nhanh chóng, miễn phí</p>
+                    <a href="#">Gọi ngay</a>
+                </div>
+
+                <div class="option">
+                    <h4>Thuốc kê đơn</h4>
+                    <p>Đặt thuốc kê đơn từ bác sĩ</p>
+                    <a href="#">Đặt ngay</a>
+                </div>
+            </div>
+        </div>
+    </div>
+      <hr class="hr-step">
+      
+</div>
+      <div class="pharmacy-info">
+          <h3>Chuỗi nhà thuốc uy tín hàng đầu Việt Nam</h3>
+          <p><b>Với hơn 12 năm hoạt động, tự hào là người bạn đồng hành tin cậy của hàng triệu người dân Việt Nam trên hành trình nâng cao chất lượng sức khỏe. Hệ thống gần 1000 nhà thuốc đạt chuẩn GPP trên toàn quốc trải dài 40 tỉnh thành, cùng đội ngũ gần 5000 Dược sĩ, mang đến dịch vụ chăm sóc sức khỏe tận tâm và trải nghiệm mua sắm tiện lợi cho mọi khách hàng.</b></p>
+            <p><b>Sản phẩm chính hãng, giá tốt</b><br> 
+                 cam kết cung cấp sản phẩm chính hãng, đa dạng từ thuốc cho các nhóm bệnh:<b> Tiểu Đường, Huyết Áp, Mỡ Máu, Tiêu Hóa, Hô Hấp,… đến thực phẩm chức năng, sản phẩm chăm sóc sức khỏe, sắc đẹp, thiết bị y tế thuộc các thương hiệu hàng đầu thế giới như: Abbott, GSK, Sanofi, Astrazeneca, Pfizer, Mega Lifesciences, Goodlife, Durex,… và các thương hiệu uy tín tại Việt Nam như Dược Hậu Giang, Nam Hà,… Bên cạnh đó, chúng tôi luôn chú trọng bảo quản sản phẩm trong điều kiện tốt nhất, đảm bảo chất lượng đến tay người tiêu dùng</b></p>
+            <p><b>Mua sắm tiện lợi, giao hàng nhanh chóng</b><br>
+                Thấu hiểu nhu cầu đa dạng của khách hàng, mang đến hệ thống mua sắm đa kênh vô cùng tiện lợi:<br>
+                Mua trực tiếp tại nhà thuốc: Hệ thống gần 1000 nhà thuốc  trải dài 40 tỉnh thành.<br>
+                Mua hàng trực tuyến: Truy cập trang <span><a href="https://www.pharmacity.vn/" target="_blank">https://www.pharmacity.vn/</a></span> hoặc ứng dụng nhà thuốc.<br>
+                Giao hàng siêu tốc: Giao hàng nhanh chóng trong vòng 2 giờ tại các thành phố lớn.<br>
+                Hợp tác với đối tác lớn, uy tín: Grab, Shopee, Lazada, Tiki…</p>
+            <p><b>Chính sách ưu đãi dành cho khách hàng thân thiết</b><br>
+                 triển khai chương trình P-Thành Viên hấp dẫn. Mỗi giao dịch mua sắm, khách hàng đều được tích điểm và có thể sử dụng điểm để trừ tiền cho các lần mua sau. Ngoài ra, Pharmacity luôn có các chương trình khuyến mãi, ưu đãi dành riêng cho khách hàng thân thiết.</p>
+                <p><b>Lựa chọn nhà thuốc, lựa chọn an tâm cho sức khỏe bản thân và gia đình!</b></p>
+      </div>
+  </div>
+
+    <br><br><hr class="hr-footer">
+<footer class="footer">
+    <div class="container">
+        <div class="listed">
+            <div class="list">
+                <h3>About nhà thuốc</h3>
+                    <a href="#">Giới thiệu</a><br>
+                    <a href="#">Hệ thống cửa hàng</a><br>
+                    <a href="#">Giấy phép kinh doanh</a><br>
+                    <a href="#">Quy chế hoạt động</a><br>
+                    <a href="#">Chính sách đổi trả</a><br>
+                    <a href="#">Câu hỏi thường gặp</a><br>
+                    <a href="#">Sitemap</a><br>
+            </div>
+            <div class="list">
+                <h3>Danh mục</h3>
+                    <a href="#">Thuốc</a><br>
+                    <a href="#">Tra cứu bệnh</a><br>
+                    <a href="#">Thực phẩm chức năng</a><br>
+                    <a href="#">Chăm sóc cá nhân</a><br>
+                    <a href="#">Mẹ và Bé</a><br>
+                    <a href="#">Chăm sóc sắc đẹp</a><br>
+                    <a href="#">Thiết bị y tế</a><br>
+                    <a href="#">Sản phẩm tiện lợi</a><br>
+                    <a href="#">Doanh nghiệp</a><br>
+                    <a href="#">Nhãn hàng</a><br>
+                    <a href="#">Khuyến mãi HOT</a><br>
+                    <a href="#">Góc sức khỏe</a><br>
+            </div>
+            <div class="list">
+                <h3>Tổng đài CSKH</h3>
+                    <a href="#">Hỗ trợ đặt hàng : <span style="color: blue;">1800 6821</span></a><br><br>
+                <h3>Ngôn ngữ</h3>
+                <a href="">Tiếng Việt</a><br>
+                <a href="">Tiếng Anh</a><br>
+                <a href="">Tiếng Trung</a><br>
+            </div>
+            <div class="list">
+                <h3>Theo dõi chúng tôi trên</h3>
+                <ul>
+                    <li><a href="#"><img src="https://prod-cdn.pharmacity.io/e-com/images/static-website/20240706163158-0-facebook.svg" alt=""> Facebook</a></li>
+                    <li><a href="#"><img src="https://prod-cdn.pharmacity.io/e-com/images/static-website/20240706163159-0-youtube.svg" alt=""> Youtube</a></li>
+                    <li><a href="#"><img src="https://prod-cdn.pharmacity.io/e-com/images/static-website/20240809162128-0-zalo.svg" width="20px"> Zalo</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</footer>
+<script src="../trangchu.js"></script>
+</body>
+</html>
+        

@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Tra cứu bệnh</title>
+    
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../wstyle.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+</head>
+
+
+<body>
+    <header class="header">
+        <div class="container">
+            <div style="width: 20%;" class="left">
+                <a href="../index.html"><img class="logo" src="../images/logo.jpg" alt="logo nha thuoc" style="width: 19%;"></a>
+                <a style="text-decoration: none; color: black;" href="../index.html"><span style="text-align: center;font-size: 25px;">Nhà Thuốc</span></a>
+            </div>
+            <div class="search-bar">
+                <input type="text" placeholder="Tìm thuốc, triệu chứng, vitamin và thực phẩm chức năng" class="search-input">
+                <button class="search-btn">Search</button>
+                
+                <button style="background-color: #0096d6;border: none;margin-left: 20px;" id="opencnoti"><img style="width: 30px;" src="../images/noti.png" alt="thông báo" class="noti"></button>
+                <a href="../cart.html"><img class="noti" src="../images/cart.png" alt="giỏ hàng"></a> 
+                <div class="overlay" id='popnoti'>
+                    <div class="popup" style="height: 60%;">
+                        <button id="closenoti" style="float: right;">x</button>
+                        <h3>Thông báo</h3>
+                        <br>
+                      <p>bạn khong co thong bao nao</p>
+                    </div>
+                    </div>
+            </div>
+            <div class="auth-buttons">
+                    <button class="btn auth-btn" id="openPopup">Đăng nhập</button>
+                    <div class="overlay" id="popupOverlay">
+                        <div class="popup">
+                            <button id="closePopup" style="float: right;">x</button>
+                          <h2>Đăng nhập</h2>
+                          <form>
+                            <input class="nhap-text required" type="text" name="fname" placeholder="Tên tài khoản" id="namedn"><br>
+                            <input class="nhap-text required" type="text" name="fname" placeholder="Mật khẩu" id="passdn"><br>
+                          </form>
+                          <a style="margin-right: 50px; float: right;" href="http://127.0.0.1:5500/quenmk.html">Quên mật khẩu ?</a>
+                          <br><br>
+                          <button class="dang-nhap" onclick="dangnhap()">Đăng nhập ngay</button><br>
+                          <button class="dang-ki" id="dkOpen">Tạo tài khoản mới</button>
+                          <div class="overlaydk" id="dkiOverlay">
+                            <div class="popupdk">
+                                <button id="dkClose" style="float: right;">x</button>
+                              <h2>Đăng Kí</h2>
+                              <form name="myForm" action="" onsubmit="return validateForm()" method="post">
+                                <input class="nhap-text" type="text" name="fname" placeholder="Tên tài khoản">
+                                <input class="nhap-text" type="text" name="fname" placeholder="Mật khẩu">
+                                <input type="text" class="nhap-text" placeholder="Nhập lại mật khẩu">
+                                <input type="text" class="nhap-text" placeholder="Nhập email của bạn">
+                              </form>
+                              <br><br>
+                              <button class="dang-ki" id="dkClose" onclick="dangki()">Đăng Kí</button><br>
+                          <br><br>
+                        </div>
+                        </div>
+                        
+                    </div>
+            </div>
+            
+        </div>
+      
+        </header>
+    <nav class="nav">
+        <div class="container">
+            <div class="menu">
+                <a href="#">
+                    Danh mục
+                   </a>
+                   <a href="thuoc.html">
+                    Thuốc
+                   </a>
+                   <a href="tracuubenh.html">
+                    Trả cứu bệnh
+                   </a>
+                   <a href="thucphamchucnang.html">
+                    Thực phẩm chức năng
+                   </a>
+                   <a href="mevabe.html">
+                    Mẹ và bé
+                   </a>
+                   <a href="doanhnghiep.html">
+                    Doanh nghiệp
+                   </a>
+                   <a href="chamsocsacdep.html">
+                    Chăm sóc sắc đẹp
+                   </a>
+                   <a href="chamsoccanhan.html">
+                    Chăm sóc cá nhân
+                   </a>
+            </div>
+        </div>
+    </nav>
+    <div class="breadcrumb">
+        <ul>
+            <li><a href="index.html">Trang chủ</a></li>
+            <li><span class="separator">></span></li>
+            <li><a href="tracuubenh.html">Tra cứu bệnh</a></li>
+            
+        </ul>
+    </div>
+    <!-- Thanh tìm kiếm -->
+<div class="search-container">
+    <input type="text" id="diseaseSearch" placeholder="Tìm kiếm bệnh...">
+    <button id="searchButton">Tìm kiếm</button>
+</div>
+
+<!-- Tab điều hướng -->
+<div class="disease-navigation">
+    <button class="tab-button active" onclick="showCategory('body-parts')">Theo bộ phận cơ thể</button>
+    <button class="tab-button" onclick="showCategory('subjects')">Theo đối tượng</button>
+    <button class="tab-button" onclick="showCategory('seasonal')">Theo mùa</button>
+    <button class="tab-button" onclick="showCategory('specialty')">Chuyên khoa</button>
+    <button class="tab-button" onclick="showCategory('popular')">Bệnh phổ biến</button> <!-- Thêm tab cho bệnh phổ biến -->
+</div>
+
+<!-- Bệnh theo bộ phận cơ thể -->
+<div class="disease-section" id="body-parts">
+    <h2>Bệnh theo bộ phận cơ thể</h2>
+    <div class="category-grid">
+        <div class="category-item">
+            <img src="https://prod-cdn.pharmacity.io/blog/Head.png" alt="Đầu">
+            <span>Đầu</span>
+        </div>
+        <div class="category-item">
+            <img src="https://prod-cdn.pharmacity.io/blog/Ear-nose-lips.png" alt="Tai mũi họng">
+            <span>Tai mũi họng</span>
+        </div>
+        <!-- Thêm các mục khác -->
+        <div class="category-item">
+            <img src="https://prod-cdn.pharmacity.io/blog/Belly.png" alt="Ngực">
+            <span>Ngực</span>
+        </div>
+        <div class="category-item">
+            <img src="https://prod-cdn.pharmacity.io/blog/Shoulder.png" alt="Cổ vai gáy">
+            <span>Cổ vai gáy</span>
+        </div>
+        <div class="category-item">
+            <img src="https://prod-cdn.pharmacity.io/blog/Skin-1-300x300-1.png" alt="Da">
+            <span>Da</span>
+        </div> 
+        <div class="category-item">
+            <img src="https://prod-cdn.pharmacity.io/blog/XY-300x300-1.png" alt="Sinh dục">
+            <span>SInh dục</span>
+        </div>
+    </div>
+</div>
+
+<!-- Bệnh theo đối tượng -->
+<div class="disease-section" id="subjects" style="display: none;">
+    <h2>Bệnh theo đối tượng</h2>
+    <div class="category-grid">
+        <div class="category-item">
+            <img src="https://production-cdn.pharmacity.io/digital/640x640/plain/blog/NguoiCaoTuoi.png" alt="Bệnh người cao tuổi">
+            <span>Bệnh người cao tuổi</span>
+        </div>
+        <div class="category-item">
+            <img src="https://production-cdn.pharmacity.io/digital/640x640/plain/blog/TreEm.png" alt="Bệnh trẻ em">
+            <span>Bệnh trẻ em</span>
+        </div>
+        <div class="category-item">
+            <img src="https://production-cdn.pharmacity.io/digital/640x640/plain/blog/Men-300x300-1.png" alt="Bệnh nam giới">
+            <span>Bệnh nam giới</span>
+        </div>
+        <!-- Thêm các mục khác -->
+        <div class="category-item">
+            <img src="https://production-cdn.pharmacity.io/digital/640x640/plain/blog/Women.png" alt="Bệnh nữ giới">
+            <span>Bệnh nữ giới</span>
+        </div>
+        <div class="category-item">
+            <img src="https://production-cdn.pharmacity.io/digital/640x640/plain/blog/TuoiDayThi.png" alt="Bệnh tuổi dậy thì">
+            <span>Bệnh tuổi dậy thì</span>
+        </div>
+        <div class="category-item">
+            <img src="https://production-cdn.pharmacity.io/digital/640x640/plain/blog/MangThai.png" alt="Bệnh phụ nữ mang thai">
+            <span>Bệnh phụ nữ mang thai</span>
+        </div>
+    </div>
+</div>
+
+<!-- Bệnh theo mùa -->
+<div class="disease-section" id="seasonal" style="display: none;">
+    <h2>Bệnh theo mùa</h2>
+    <div class="category-grid">
+        <div class="category-item">
+            <img src="https://production-cdn.pharmacity.io/digital/640x640/plain/blog/dau-co-xuong-khop.png" alt="Đau cơ xương khớp">
+            <span>Đau cơ xương khớp</span>
+        </div>
+        <div class="category-item">
+            <img src="https://production-cdn.pharmacity.io/digital/640x640/plain/blog/viem-xoang-nen-an-gi-1.jpg" alt="Viêm xoang">
+            <span>Viêm xoang</span>
+        </div>
+        <!-- Thêm các mục khác -->
+        <div class="category-item">
+            <img src="https://production-cdn.pharmacity.io/digital/640x640/plain/blog/luu-y-khi-dau-mat-do-1-1.jpeg" alt="Đau mắt đỏ">
+            <span>Đau mắt đỏ</span>
+        </div>
+        <div class="category-item">
+            <img src="https://production-cdn.pharmacity.io/digital/640x640/plain/blog/benh-di-ung-1.jpg" alt="Bệnh dị ứng">
+            <span>Bệnh dị ứng</span>
+        </div>
+        <div class="category-item">
+            <img src="https://production-cdn.pharmacity.io/digital/640x640/plain/blog/viem-phe-quan-la-gi-1.jpg" alt="Viêm phế quản">
+            <span>Viêm phế quản</span>
+        </div>
+        <div class="category-item">
+            <img src="https://production-cdn.pharmacity.io/digital/640x640/plain/blog/6O8D9s5k-benh-tay-chan-mieng.png" alt="Tay chân miệng">
+            <span>Tay chân miệng</span>
+        </div>
+    </div>
+</div>
+
+<!-- Bệnh theo chuyên khoa -->
+<div class="disease-section" id="specialty" style="display: none;">
+    <h2>Bệnh theo chuyên khoa</h2>
+    <div class="category-grid">
+        <div class="category-item">
+            <img src="https://prod-cdn.pharmacity.io/blog/XHN-1.jpg" alt="Bệnh về máu">
+            <span>Bệnh về máu</span>
+        </div>
+        <div class="category-item">
+            <img src="https://prod-cdn.pharmacity.io/blog/sa-sut-tri-tue-tmnao-1.jpg" alt="Bệnh thần kinh">
+            <span>Bệnh thần kinh</span>
+        </div>
+        <!-- Thêm các mục khác -->
+        <div class="category-item">
+            <img src="https://prod-cdn.pharmacity.io/blog/Nhung-dieu-can-biet-ve-benh-phoi-tac-nghen-man-tinh.png" alt="Bệnh về phổi">
+            <span>Bệnh về phổi</span>
+        </div>
+        <div class="category-item">
+            <img src="https://prod-cdn.pharmacity.io/blog/DQBdHB44-nam-da-dau-1.jpg" alt="Bệnh về da">
+            <span>Bệnh về da</span>
+        </div>
+        <div class="category-item">
+            <img src="https://prod-cdn.pharmacity.io/blog/mat-ngu-la-gi-1.jpg" alt="Bệnh về tâm lí tâm thần">
+            <span>Bệnh về tâm lí tâm thần</span>
+        </div>
+        <div class="category-item">
+            <img src="https://prod-cdn.pharmacity.io/blog/tes-1.jpg" alt="Bệnh về giới tính">
+            <span>Bệnh về giới tính</span>
+        </div>
+    </div>
+</div>
+
+<!-- Bệnh phổ biến -->
+<div class="disease-section" id="popular" style="display: none;">
+    <h2>Bệnh phổ biến</h2>
+    <div class="category-grid">
+        <div class="category-item">
+            <img src="https://production-cdn.pharmacity.io/digital/640x640/plain/blog/C5beVEzq-Dai-thao-duong-thai-ky.png" alt="Tiểu đường thai kỳ">
+            <span>Tiểu đường thai kỳ</span>
+        </div>
+        <div class="category-item">
+            <img src="https://production-cdn.pharmacity.io/digital/640x640/plain/blog/tieu-chay-1.png" alt="Tiêu chảy">
+            <span>Tiêu chảy</span>
+        </div>
+        <div class="category-item">
+            <img src="https://production-cdn.pharmacity.io/digital/640x640/plain/blog/sot-sieu-vi-1.jpg" alt="Sốt siêu vi">
+            <span>Sốt siêu vi</span>
+        </div>
+        <div class="category-item">
+            <img src="https://production-cdn.pharmacity.io/digital/640x640/plain/blog/Alzheimer-1.jpeg" alt="Alzheimer">
+            <span>Alzheimer</span>
+        </div>
+        <div class="category-item">
+            <img src="https://production-cdn.pharmacity.io/digital/640x640/plain/blog/gioi-leo-2.jpg" alt="Giời leo">
+            <span>Giời leo</span>
+        </div>
+        <!-- Thêm các mục khác nếu cần -->
+        <div class="category-item">
+            <img src="https://production-cdn.pharmacity.io/digital/640x640/plain/blog/nhung-dieu-can-biet-ve-benh-hen-suyen.png" alt="Hen Suyễn">
+            <span>Hen suyễn</span>
+        </div> 
+    </div>
+</div>
+                           
+    <br><br><hr>
+    <footer class="footer">
+        <div class="container">
+            <div class="listed">
+                <div class="list">
+                    <h3>About nhà thuốc</h3>
+                        <a href="#">Giới thiệu</a><br>
+                        <a href="#">Hệ thống cửa hàng</a><br>
+                        <a href="#">Giấy phép kinh doanh</a><br>
+                        <a href="#">Quy chế hoạt động</a><br>
+                        <a href="#">Chính sách đổi trả</a><br>
+                        <a href="#">Câu hỏi thường gặp</a><br>
+                        <a href="#">Sitemap</a><br>
+                </div>
+                <div class="list">
+                    <h3>Danh mục</h3>
+                        <a href="#">Thuốc</a><br>
+                        <a href="#">Tra cứu bệnh</a><br>
+                        <a href="#">Thực phẩm chức năng</a><br>
+                        <a href="#">Chăm sóc cá nhân</a><br>
+                        <a href="#">Mẹ và Bé</a><br>
+                        <a href="#">Chăm sóc sắc đẹp</a><br>
+                        <a href="#">Thiết bị y tế</a><br>
+                        <a href="#">Sản phẩm tiện lợi</a><br>
+                        <a href="#">Doanh nghiệp</a><br>
+                        <a href="#">Nhãn hàng</a><br>
+                        <a href="#">Khuyến mãi HOT</a><br>
+                        <a href="#">Góc sức khỏe</a><br>
+                </div>
+                <div class="list">
+                    <h3>Tổng đài CSKH</h3>
+                        <a href="#">Hỗ trợ đặt hàng : <span style="color: blue;">1800 6821</span></a><br><br>
+                    <h3>Ngôn ngữ</h3>
+                    <a href="">Tiếng Việt</a><br>
+                    <a href="">Tiếng Anh</a><br>
+                    <a href="">Tiếng Trung</a><br>
+                </div>
+                <div class="list">
+                    <h3>Theo dõi chúng tôi trên</h3>
+                    <ul>
+                        <li><a href="#"><img src="https://prod-cdn.pharmacity.io/e-com/images/static-website/20240706163158-0-facebook.svg" alt=""> Facebook</a></li>
+                        <li><a href="#"><img src="https://prod-cdn.pharmacity.io/e-com/images/static-website/20240706163159-0-youtube.svg" alt=""> Youtube</a></li>
+                        <li><a href="#"><img src="https://prod-cdn.pharmacity.io/e-com/images/static-website/20240809162128-0-zalo.svg" width="20px"> Zalo</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="../trangchu.js"></script>
+</body>
+
+
+
+</html>

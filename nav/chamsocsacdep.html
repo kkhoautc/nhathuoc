@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Thuốc</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../wstyle.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <title>Chăm sóc sắc đẹp</title>
+</head>
+
+
+<body>
+    <header class="header">
+        <div class="container">
+            <div style="width: 20%;" class="left">
+                <a href="../index.html"><img class="logo" src="../images/logo.jpg" alt="logo nha thuoc" style="width: 19%;"></a>
+                <a style="text-decoration: none; color: black;" href="../index.html"><span style="text-align: center;font-size: 25px;">Nhà Thuốc</span></a>
+            </div>
+            <div class="search-bar">
+                <input type="text" placeholder="Tìm thuốc, triệu chứng, vitamin và thực phẩm chức năng" class="search-input">
+                <button class="search-btn">Search</button>
+                
+                <button style="background-color: #0096d6;border: none;margin-left: 20px;" id="opencnoti"><img style="width: 30px;" src="../images/noti.png" alt="thông báo" class="noti"></button>
+                <a href="../cart.html"><img class="noti" src="../images/cart.png" alt="giỏ hàng"></a> 
+                <div class="overlay" id='popnoti'>
+                    <div class="popup" style="height: 60%;">
+                        <button id="closenoti" style="float: right;">x</button>
+                        <h3>Thông báo</h3>
+                        <br>
+                      <p>bạn khong co thong bao nao</p>
+                    </div>
+                    </div>
+            </div>
+            <div class="auth-buttons">
+                    <button class="btn auth-btn" id="openPopup">Đăng nhập</button>
+                    <div class="overlay" id="popupOverlay">
+                        <div class="popup">
+                            <button id="closePopup" style="float: right;">x</button>
+                          <h2>Đăng nhập</h2>
+                          <form>
+                            <input class="nhap-text required" type="text" name="fname" placeholder="Tên tài khoản" id="namedn"><br>
+                            <input class="nhap-text required" type="text" name="fname" placeholder="Mật khẩu" id="passdn"><br>
+                          </form>
+                          <a style="margin-right: 50px; float: right;" href="http://127.0.0.1:5500/quenmk.html">Quên mật khẩu ?</a>
+                          <br><br>
+                          <button class="dang-nhap" onclick="dangnhap()">Đăng nhập ngay</button><br>
+                          <button class="dang-ki" id="dkOpen">Tạo tài khoản mới</button>
+                          <div class="overlaydk" id="dkiOverlay">
+                            <div class="popupdk">
+                                <button id="dkClose" style="float: right;">x</button>
+                              <h2>Đăng Kí</h2>
+                              <form name="myForm" action="" onsubmit="return validateForm()" method="post">
+                                <input class="nhap-text" type="text" name="fname" placeholder="Tên tài khoản">
+                                <input class="nhap-text" type="text" name="fname" placeholder="Mật khẩu">
+                                <input type="text" class="nhap-text" placeholder="Nhập lại mật khẩu">
+                                <input type="text" class="nhap-text" placeholder="Nhập email của bạn">
+                              </form>
+                              <br><br>
+                              <button class="dang-ki" id="dkClose" onclick="dangki()">Đăng Kí</button><br>
+                          <br><br>
+                        </div>
+                        </div>
+                        
+                    </div>
+            </div>
+            
+        </div>
+      
+        </header>
+    <nav class="nav">
+        <div class="container">
+            <div class="menu">
+                <a href="#">
+                    Danh mục
+                   </a>
+                   <a href="thuoc.html">
+                    Thuốc
+                   </a>
+                   <a href="tracuubenh.html">
+                    Trả cứu bệnh
+                   </a>
+                   <a href="thucphamchucnang.html">
+                    Thực phẩm chức năng
+                   </a>
+                   <a href="mevabe.html">
+                    Mẹ và bé
+                   </a>
+                   <a href="doanhnghiep.html">
+                    Doanh nghiệp
+                   </a>
+                   <a href="chamsocsacdep.html">
+                    Chăm sóc sắc đẹp
+                   </a>
+                   <a href="chamsoccanhan.html">
+                    Chăm sóc cá nhân
+                   </a>
+            </div>
+        </div>
+    </nav>
+    <div class="breadcrumb">
+        <ul>
+            <li><a href="index.html">Trang chủ</a></li>
+            <li><span class="separator">></span></li>
+            <li><a href="chamsocsacdep.html">Chăm sóc sắc đẹp</a></li>
+        </ul>
+    </div>
+    <h1 class="section-title" onclick="toggleFunctionalFoods()">CHĂM SÓC SẮC ĐẸP</h1>
+    <div class="functional-foods-container" id="functionalFoods">
+        <div class="product">
+            <img src="https://production-cdn.pharmacity.io/digital/256x256/plain/e-com/images/ecommerce/20241021015801-0-P21197.png" alt="Nước Tẩy Trang Bí Đao COCOON">
+            <h5>Nước Tẩy Trang Bí Đao COCOON</h5>
+            <p>295.700đ</p>
+            <button>Mua sản phẩm</button>
+        </div>
+        <div class="product">
+            <img src="https://production-cdn.pharmacity.io/digital/256x256/plain/e-com/images/ecommerce/P03664_1_l.webp" alt="Mặt Nạ DERMAL Collagen Cucumber">
+            <h5>Mặt Nạ DERMAL Collagen Cucumber</h5>
+            <p>500.000đ</p>
+            <button>Mua sản phẩm</button>
+        </div>
+        <div class="product">
+            <img src="https://production-cdn.pharmacity.io/digital/256x256/plain/e-com/images/ecommerce/P12933_1_l.webp" alt="Sữa Rửa Mặt E100 Tinh Chất Sữa Bò">
+            <h5>Sữa Rửa Mặt E100 Tinh Chất Sữa Bò</h5>
+            <p>111.111đ</p>
+            <button>Mua sản phẩm</button>
+        </div>
+        <div class="product">
+            <img src="https://production-cdn.pharmacity.io/digital/640x640/plain/e-com/images/ecommerce/20240830061743-1-P21206_1.png" alt="Tẩy Tế Bào Chết Da Mặt COCOON Cà Phê Daklak">
+            <h5>Tẩy Tế Bào Chết Da Mặt COCOON</h5>
+            <p>150.000đ</p>
+            <button>Mua sản phẩm</button>
+        </div>
+        <div class="product">
+            <img src="https://production-cdn.pharmacity.io/digital/256x256/plain/e-com/images/ecommerce/P22500_1.jpg" alt="Gel Dưỡng Ẩm NEUTROGENA Hydro Boost Water">
+            <h5>Gel Dưỡng Ẩm NEUTROGENA</h5>
+            <p>555.555đ</p>
+            <button>Mua sản phẩm</button>
+        </div>
+        <div class="product">
+            <img src="https://production-cdn.pharmacity.io/digital/640x640/plain/e-com/images/ecommerce/20240605062131-0-P10889_1.jpg" alt="Nước Hoa Hồng SIMPLE Soothing Facial">
+            <h5>Nước Hoa Hồng SIMPLE Soothing Facial</h5>
+            <p>1.000đ</p>
+            <button>Mua sản phẩm</button>
+        </div>
+        <div class="product">
+            <img src="https://production-cdn.pharmacity.io/digital/256x256/plain/e-com/images/ecommerce/P07446_1_l.webp" alt="Bông Tẩy Trang HELEN HARPER">
+            <h5>Bông Tẩy Trang HELEN HARPER</h5>
+            <p>20.000đ</p>
+            <button>Mua sản phẩm</button>
+        </div>
+        <div class="product">
+            <img src="https://production-cdn.pharmacity.io/digital/256x256/plain/e-com/images/ecommerce/P01859.png" alt="Gel HIRUSCAR Post Acne ">
+            <h5>Gel HIRUSCAR Post Acne </h5>
+            <p>1.222.333đ</p>
+            <button>Mua sản phẩm</button>
+        </div>
+        <div class="product">
+            <img src="https://production-cdn.pharmacity.io/digital/256x256/plain/e-com/images/ecommerce/P18815_3.jpg" alt="Kem Chống Nắng CANCER COUNCIL">
+            <h5>Kem Chống Nắng CANCER COUNCIL</h5>
+            <p>4.444đ</p>
+            <button>Mua sản phẩm</button>
+        </div>
+        <div class="product">
+            <img src="https://production-cdn.pharmacity.io/digital/640x640/plain/e-com/images/ecommerce/P09554_1N.jpg" alt="Sữa chống nắng dưỡng da sáng hồng Bioré">
+            <h5>Sữa chống nắng dưỡng da sáng hồng Bioré</h5>
+            <p>9.999đ</p>
+            <button>Mua sản phẩm</button>
+        </div>
+    </div>
+                           
+    <br><br><hr>
+    <footer class="footer">
+        <div class="container">
+            <div class="listed">
+                <div class="list">
+                    <h3>About nhà thuốc</h3>
+                        <a href="#">Giới thiệu</a><br>
+                        <a href="#">Hệ thống cửa hàng</a><br>
+                        <a href="#">Giấy phép kinh doanh</a><br>
+                        <a href="#">Quy chế hoạt động</a><br>
+                        <a href="#">Chính sách đổi trả</a><br>
+                        <a href="#">Câu hỏi thường gặp</a><br>
+                        <a href="#">Sitemap</a><br>
+                </div>
+                <div class="list">
+                    <h3>Danh mục</h3>
+                        <a href="#">Thuốc</a><br>
+                        <a href="#">Tra cứu bệnh</a><br>
+                        <a href="#">Thực phẩm chức năng</a><br>
+                        <a href="#">Chăm sóc cá nhân</a><br>
+                        <a href="#">Mẹ và Bé</a><br>
+                        <a href="#">Chăm sóc sắc đẹp</a><br>
+                        <a href="#">Thiết bị y tế</a><br>
+                        <a href="#">Sản phẩm tiện lợi</a><br>
+                        <a href="#">Doanh nghiệp</a><br>
+                        <a href="#">Nhãn hàng</a><br>
+                        <a href="#">Khuyến mãi HOT</a><br>
+                        <a href="#">Góc sức khỏe</a><br>
+                </div>
+                <div class="list">
+                    <h3>Tổng đài CSKH</h3>
+                        <a href="#">Hỗ trợ đặt hàng : <span style="color: blue;">1800 6821</span></a><br><br>
+                    <h3>Ngôn ngữ</h3>
+                    <a href="">Tiếng Việt</a><br>
+                    <a href="">Tiếng Anh</a><br>
+                    <a href="">Tiếng Trung</a><br>
+                </div>
+                <div class="list">
+                    <h3>Theo dõi chúng tôi trên</h3>
+                    <ul>
+                        <li><a href="#"><img src="https://prod-cdn.pharmacity.io/e-com/images/static-website/20240706163158-0-facebook.svg" alt=""> Facebook</a></li>
+                        <li><a href="#"><img src="https://prod-cdn.pharmacity.io/e-com/images/static-website/20240706163159-0-youtube.svg" alt=""> Youtube</a></li>
+                        <li><a href="#"><img src="https://prod-cdn.pharmacity.io/e-com/images/static-website/20240809162128-0-zalo.svg" width="20px"> Zalo</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="../trangchu.js"></script>
+</body>
+
+
+
+</html>

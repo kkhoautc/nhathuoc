@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <title>
+   Giỏ hàng nhà thuốc
+  </title>
+  <link rel="stylesheet" href="cart.css">
+ </head>
+ <body>
+    <header class="header">
+        <div class="container">
+            <div style="width: 20%;" class="left">
+                <a href="http://127.0.0.1:5500/"><img class="logo" src="logo.jpg" alt="logo nha thuoc" style="width: 19%;"></a>
+                <a style="text-decoration: none; color: black;" href="http://127.0.0.1:5500/"><span style="text-align: center;font-size: 25px;">Nhà Thuốc</span></a>
+            </div>
+            <div class="search-bar">
+                <input type="text" placeholder="Tìm thuốc, triệu chứng, vitamin và thực phẩm chức năng" class="search-input">
+                <button class="search-btn">Search</button>
+                
+                <button style="background-color: #0096d6;border: none;margin-left: 20px;" id="opencnoti"><img style="width: 30px;" src="noti.png" alt=""></button>
+                <a href="#noti"><img class="noti" src="cart.png" alt="thongbap"></a> 
+                <div class="overlay" id='popnoti'>
+                    <div class="popup" style="height: 60%;">
+                        <button id="closenoti" style="float: right;">x</button>
+                        <h3>Thông báo</h3>
+                        <br>
+                      <p>bạn khong co thong bao nao</p>
+                    </div>
+                    </div>
+            </div>
+            <div class="auth-buttons">
+                    <button class="btn auth-btn" id="openPopup">Đăng nhập</button>
+                    <div class="overlay" id="popupOverlay">
+                        <div class="popup">
+                            <button id="closePopup" style="float: right;">x</button>
+                          <h2>Đăng nhập</h2>
+                          <form name="myForm" action="" onsubmit="return validateForm()" method="post">
+                            <input class="nhap-text" type="text" name="fname" placeholder="Tên tài khoản">
+                            <input class="nhap-text" type="text" name="fname" placeholder="Mật khẩu">
+                          </form>
+                          <a style="margin-right: 50px; float: right;" href="http://127.0.0.1:5500/quenmk.html">Quên mật khẩu ?</a>
+                          <br><br>
+                          <button class="dang-nhap" id="closePopup" onclick="dangnhap()">Đăng nhập ngay</button><br>
+                          <button class="dang-ki" id="dkOpen">Tạo tài khoản mới</button>
+                          <div class="overlaydk" id="dkiOverlay">
+                            <div class="popupdk">
+                                <button id="dkClose" style="float: right;">x</button>
+                              <h2>Đăng Kí</h2>
+                              <form name="myForm" action="" onsubmit="return validateForm()" method="post">
+                                <input class="nhap-text" type="text" name="fname" placeholder="Tên tài khoản">
+                                <input class="nhap-text" type="text" name="fname" placeholder="Mật khẩu">
+                                <input type="text" class="nhap-text" placeholder="Nhập lại mật khẩu">
+                                <input type="text" class="nhap-text" placeholder="Nhập email của bạn">
+                              </form>
+                              <br><br>
+                              <button class="dang-ki" id="dkClose" onclick="dangki()">Đăng Kí</button><br>
+                          <br><br>
+                        </div>
+                        </div>
+                        
+                    </div>
+            </div>
+            
+        </div>
+    
+        </header>
+        <nav class="nav">
+            <div class="container">
+                <div class="menu">
+                    <a href="#">
+                        Danh mục
+                       </a>
+                       <a href="#">
+                        Thuốc
+                       </a>
+                       <a href="#">
+                        Trả cứu bệnh
+                       </a>
+                       <a href="#">
+                        Thực phẩm chức năng
+                       </a>
+                       <a href="#">
+                        Mẹ và bé
+                       </a>
+                       <a href="#">
+                        Doanh nghiệp
+                       </a>
+                       <a href="#">
+                        Nhận hàng Pharmacy
+                       </a>
+                       <a href="#">
+                        Chăm sóc cá nhân
+                       </a>
+                </div>
+            </div>
+        </nav><br>
+  <div class="container">
+   <div class="cart">
+    <div class="cart-header">
+     <h2>
+      Giỏ hàng (2)
+     </h2>
+     <a href="#">
+      Xóa
+     </a>
+    </div>
+    <div class="free-shipping">
+     <i class="fas fa-truck">
+     </i>
+     <span>
+      Miễn phí vận chuyển cho mọi đơn hàng từ 0đ.
+     </span>
+    </div>
+    <table class="cart-table">
+     <thead>
+      <tr>
+       <th>
+        <input checked="" type="checkbox"/>
+       </th>
+       <th>
+        Sản phẩm
+       </th>
+       <th>
+        Đơn giá
+       </th>
+       <th>
+        Số lượng
+       </th>
+       <th>
+        Thành tiền
+       </th>
+       <th>
+       </th>
+      </tr>
+     </thead>
+     <tbody>
+      <tr>
+       <td>
+        <input checked="" type="checkbox"/>
+       </td>
+       <td class="product-info">
+        <img alt="Gel URGO ECZEKALM hỗ trợ giảm các triệu chứng viêm da và khô da" height="50" src="https://storage.googleapis.com/a1aa/image/hztFYz1owJZyJVrLbnPDxCz4xoVIONn8V6ofEpJHSQ8nLr0JA.jpg" width="50"/>
+        <div>
+         <p>
+          Gel URGO ECZEKALM hỗ trợ giảm các triệu chứng viêm da và khô da
+         </p>
+         <p>
+          Hộp
+         </p>
+        </div>
+       </td>
+       <td class="unit-price" value="303,000">
+        303,000 ₫
+       </td>
+       <td class="quantity">
+        <button class="decrement">
+         -
+        </button>
+        <input type="text" value="1"/>
+        <button class="increment">
+         +
+        </button>
+       </td>
+       <td class="total-price" value="303,000">
+        303,000 ₫
+       </td>
+       <td class="remove">
+        <i class="fas fa-trash">
+        </i>
+       </td>
+      </tr>
+      <tr>
+       <td>
+        <input checked="" type="checkbox"/>
+       </td>
+       <td class="product-info">
+        <img alt="Son Dưỡng Môi NIVEA Strawberry Shine Hương Dâu - Màu đỏ (Thỏi)" height="50" src="https://storage.googleapis.com/a1aa/image/oxCpclbtv3YnAZC5fh9HDz3fROSheN8emNBGxV1WmoI7cZlOB.jpg" width="50"/>
+        <div>
+         <p>
+          Son Dưỡng Môi NIVEA Strawberry Shine Hương Dâu - Màu đỏ (Thỏi)
+         </p>
+         <p>
+          Cây
+         </p>
+        </div>
+       </td>
+       <td class="unit-price" value="61,600">
+        61,600 ₫
+       </td>
+       <td class="quantity">
+        <button class="decrement">
+         -
+        </button>
+        <input type="text" value="1"/>
+        <button class="increment">
+         +
+        </button>
+       </td>
+       <td class="total-price" value="61,600">
+        61,600 ₫
+       </td>
+       <td class="remove">
+        <i class="fas fa-trash">
+        </i>
+       </td>
+      </tr>
+     </tbody>
+    </table>
+   </div>
+   <div class="summary">
+    <h3>
+     Khuyến mãi
+    </h3>
+    <div class="promo">
+     <span>
+      Chọn mã
+     </span>
+     <a href="#">
+      Chọn mã
+     </a>
+    </div>
+    <table>
+     <tr>
+      <th>
+       Tạm tính
+      </th>
+      <td class="subtotal">
+       364,600 ₫
+      </td>
+     </tr>
+     <tr>
+      <th>
+       Giảm giá ưu đãi
+      </th>
+      <td>
+       -
+      </td>
+     </tr>
+     <tr>
+      <th>
+       Giảm giá sản phẩm
+      </th>
+      <td class="discount">
+       0 ₫
+      </td>
+     </tr>
+     <tr>
+      <th style="color: red;">
+       Tổng tiền
+      </th>
+      <td class="total">
+        364,600 ₫
+       </td>
+     </tr>
+    </table>
+    <button id="checkoutBtn">
+     Mua hàng (2)
+    </button>
+   </div>
+  </div>
+  <div class="modal" id="paymentModal">
+   <div class="modal-content">
+    <span class="close" id="closeModal">&times;</span>
+    <h2>Chọn phương thức thanh toán</h2>
+    <form class="payment-methods">
+        <input type="radio">
+        <img src="https://upload.wikimedia.org/wikipedia/vi/f/fe/MoMo_Logo.png" width="20px">
+        <label>Momo</label><br>
+        <input type="radio">
+        <img src="https://png.pngtree.com/png-vector/20220610/ourmid/pngtree-download-atm-card-for-payment-png-image_4935610.png" width="20px">
+        <label>ATM</label><br>
+        <input type="radio">
+        <label>Thanh toán khi nhận hàng</label><br>
+    </form>
+    <button onclick="thanhtoan()">Xác Nhận</button>
+   </div>
+  </div>
+  <script>
+   document.querySelectorAll('.quantity').forEach(function(quantityContainer) {
+            const decrementButton = quantityContainer.querySelector('.decrement');
+            const incrementButton = quantityContainer.querySelector('.increment');
+            const quantityInput = quantityContainer.querySelector('input');
+            const unitPriceElement = quantityContainer.parentElement.querySelector('.unit-price');
+            const totalPriceElement = quantityContainer.parentElement.querySelector('.total-price');
+            const unitPrice = parseInt(unitPriceElement.textContent.replace('₫', '').replace(/,/g, ''));
+
+            decrementButton.addEventListener('click', function() {
+                let currentValue = parseInt(quantityInput.value);
+                if (currentValue > 1) {
+                    quantityInput.value = currentValue - 1;
+                    updateTotalPrice();
+                }
+            });
+
+            incrementButton.addEventListener('click', function() {
+                let currentValue = parseInt(quantityInput.value);
+                quantityInput.value = currentValue + 1;
+                updateTotalPrice();
+            });
+
+            function updateTotalPrice() {
+                const quantity = parseInt(quantityInput.value);
+                const totalPrice = unitPrice * quantity;
+                totalPriceElement.textContent = totalPrice.toLocaleString() + ' ₫';
+                updateSummary();
+            }
+        });
+
+        function updateSummary() {
+            let subtotal = 0;
+            document.querySelectorAll('.total-price').forEach(function(totalPriceElement) {
+                subtotal += 1000*parseFloat(totalPriceElement.textContent.replace('₫', ''));
+            });
+            document.querySelector('.subtotal').textContent = subtotal.toLocaleString() + ' ₫';
+            document.querySelector('.total').textContent = subtotal .toLocaleString() + ' ₫';
+        }
+
+        document.getElementById('checkoutBtn').addEventListener('click', function() {
+            document.getElementById('paymentModal').style.display = 'block';
+        });
+
+        document.getElementById('closeModal').addEventListener('click', function() {
+            document.getElementById('paymentModal').style.display = 'none';
+        });
+
+        window.addEventListener('click', function(event) {
+            if (event.target == document.getElementById('paymentModal')) {
+                document.getElementById('paymentModal').style.display = 'none';
+            }
+        });
+        function thanhtoan(){
+            alert("Bạn đã thanh toán thành công, đơn hàng sẽ được giao");
+        }
+        const openPopupButton = document.getElementById('openPopup');
+const closePopupButton = document.getElementById('closePopup');
+const popupOverlay = document.getElementById('popupOverlay');
+//thông báo
+const openPopupnoti = document.getElementById('opencnoti');
+const notiOverlay = document.getElementById('popnoti');
+const closePopupnoti = document.getElementById('closenoti');
+//đăng kí
+const opendk = document.getElementById('dkOpen');
+const closedk = document.getElementById('dkClose');
+const dkOverlay = document.getElementById('dkiOverlay');
+
+// Đăng nhập
+openPopupButton.addEventListener('click', () => {
+  popupOverlay.style.display = 'flex';
+});
+closePopupButton.addEventListener('click', () => {
+  popupOverlay.style.display = 'none';
+});
+
+popupOverlay.addEventListener('click', (e) => {
+  if (e.target === popupOverlay) {
+    popupOverlay.style.display = 'none';
+  }
+});
+//Thông báo
+openPopupnoti.addEventListener('click', () => {
+  notiOverlay.style.display = 'flex';
+  notiOverlay.style.position= 'fixed';
+});
+closePopupnoti.addEventListener('click', () => {
+  notiOverlay.style.display = 'none';
+});
+notiOverlay.addEventListener('click', (e) => {
+  if (e.target === popupOverlay) {
+    notiOverlay.style.display = 'none';
+  }
+});
+//Đăng kí
+opendk.addEventListener('click', () => {
+  dkOverlay.style.display = 'flex';
+});
+closedk.addEventListener('click', () => {
+  dkOverlay.style.display = 'none';
+});
+
+dkOverlay.addEventListener('click', (e) => {
+  if (e.target === dkOverlay) {
+    dkOverlay.style.display = 'none';
+  }
+});
+          
+function dangnhap(){
+  alert("Bạn đã đăng nhập thành công")
+  window.location.href="http://127.0.0.1:5500/"
+}
+function dangki(){
+  alert("Bạn đã tạo tài khoản thành công")
+  window.location.href="http://127.0.0.1:5500/"
+}
+  </script>
+ </body>
+</html>

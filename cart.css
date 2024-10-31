@@ -1,0 +1,427 @@
+body {
+    background-color: #f5f5f5;
+}
+*{
+    box-sizing: border-box;
+}
+body{
+    background-color: #E8F5E9;
+}
+.header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+
+}
+.header{
+    background-color: #0096d6;
+    padding: 20px;
+}
+.logo{
+    width: 50%;
+    height: auto;
+    padding: 0;
+    align-self: center;
+}
+.search-bar {
+    width: 60%;
+    align-items: center;
+    display: flex;
+    margin: 0 20px;
+    margin-top: 2%;
+}
+.noti{
+    width: 30px;
+    margin-left: 20px;
+    padding: 0;
+}
+.search-input {
+    width: 500px;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px 0 0 5px;
+    outline: none;
+}
+.search-btn {
+    padding: 15px 20px;
+    background-color: #007bbd;
+    color: white;
+    border: none;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+}
+.search-btn:hover {
+    background-color: #005f8a;
+}
+.auth-buttons {
+    display: flex;
+    align-items: center;
+    float: right;
+}
+
+.auth-btn {
+    background-color: white ;
+    color: #0096d6;
+    border: 1px solid #fff;
+    padding: 10px 20px;
+    margin-left: 10px;
+    font-size: 15px;
+    margin-top: 10%;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background 0.3s, color 0.3s;
+}
+
+.auth-btn:hover {
+    background-color: #741a1ab7;
+    color: white;
+    border: 1px solid #0096d6;
+}
+.nav{
+    background-color: rgb(75, 107, 214);
+    color: white;
+    padding:5px 0;
+    width: 100%;
+}
+.nav .menu{
+    width: 100%;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+.nav .menu a{
+    color: white;
+    margin-left: 2%;
+    margin-right: 2%;
+    text-decoration: none;
+    
+}
+.container {
+    display: flex;
+    justify-content: center;
+    padding: 5px;
+}
+.cart {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 70%;
+    padding: 20px;
+    margin-right: 20px;
+}
+.cart-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #e0e0e0;
+    padding-bottom: 10px;
+}
+.cart-header h2 {
+    margin: 0;
+    font-size: 24px;
+}
+.cart-header a {
+    color: #007bff;
+    text-decoration: none;
+}
+.cart-header a:hover {
+    text-decoration: underline;
+}
+.free-shipping {
+    background-color: #e0f7fa;
+    padding: 10px;
+    border-radius: 4px;
+    margin: 10px 0;
+    display: flex;
+    align-items: center;
+}
+.free-shipping i {
+    margin-right: 10px;
+}
+.cart-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+.cart-table th, .cart-table td {
+    padding: 10px;
+    text-align: left;
+}
+.cart-table th {
+    background-color: #f5f5f5;
+}
+.cart-table td {
+    border-bottom: 1px solid #e0e0e0;
+}
+.cart-table img {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 4px;
+}
+.cart-table .product-info {
+    display: flex;
+    align-items: center;
+}
+.cart-table .product-info img {
+    margin-right: 10px;
+}
+.cart-table .product-info div {
+    max-width: 200px;
+}
+.cart-table .product-info div p {
+    margin: 0;
+}
+.cart-table .product-info div p:first-child {
+    font-weight: bold;
+}
+.cart-table .product-info div p:last-child {
+    color: #888;
+}
+.cart-table .quantity {
+    display: flex;
+    align-items: center;
+}
+.cart-table .quantity button {
+    background-color: #e0e0e0;
+    border: none;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+.cart-table .quantity button:hover {
+    background-color: #d0d0d0;
+}
+.cart-table .quantity input {
+    width: 30px;
+    text-align: center;
+    border: none;
+    background-color: transparent;
+    margin: 0 5px;
+}
+.cart-table .remove {
+    color: #888;
+    cursor: pointer;
+}
+.cart-table .remove:hover {
+    color: #e53935;
+}
+.summary {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 30%;
+    padding: 20px;
+}
+.summary h3 {
+    margin: 0 0 20px 0;
+    font-size: 20px;
+}
+.summary .promo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.summary .promo a {
+    color: #007bff;
+    text-decoration: none;
+}
+.summary .promo a:hover {
+    text-decoration: underline;
+}
+.summary table {
+    width: 100%;
+    border-collapse: collapse;
+}
+.summary table th, .summary table td {
+    padding: 10px;
+    text-align: left;
+}
+.summary table th {
+    background-color: #f5f5f5;
+}
+.summary table td {
+    border-bottom: 1px solid #e0e0e0;
+}
+.summary table .total {
+    font-size: 24px;
+    color: #e53935;
+}
+.summary button {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+}
+.summary button:hover {
+    background-color: #0056b3;
+}
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
+    padding-top: 60px;
+}
+.modal-content {
+    background-color: #fefefe;
+    margin: 5% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 500px;
+    border-radius: 8px;
+}
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+.payment-methods {
+    list-style-type: none;
+    padding: 0;
+}
+.payment-methods input{
+    margin: 20px;
+}
+.modal-content button{
+    background-color: red;
+    color: white;
+    padding: 10px;
+    align-self: center;
+}
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+  }
+
+  /* CSS cho hộp nội dung (trang con) */
+  .popup {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    width: 500px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    text-align: center;
+  }
+
+  .nhap-text{
+    padding: 10px 20px;
+    height: 30px;
+    width: 80%;
+    color: black;
+    margin: 10px;
+  }
+  .dang-nhap{
+    background-color: #ff5c5c;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    width: 80%;
+    cursor: pointer;
+  }
+  .dang-ki{
+    background-color: white;
+    color: black;
+    border: 1px solid black ;
+    padding: 10px 20px;
+    border-radius: 5px;
+    width: 80%;
+    cursor: pointer;
+  }
+  .popupdk {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    width: 500px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    text-align: center;
+  }
+  .overlaydk {
+    position:fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+  }
+  .popup1 {
+    display: none; /* Ẩn popup mặc định */
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.popup-content {
+    background-color: white;
+    position:fixed;
+    margin-top:5%;
+    margin-left: 25%;
+    display: block;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 50%;
+    height: 70%;
+    text-align: center; /* Căn giữa nội dung */
+}
+
+.popup-image {
+    width: 50%; /* Kích thước ảnh trong popup */
+    height: auto;
+    margin: 10px 0;
+    float: left; /* Khoảng cách giữa tiêu đề và ảnh */
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}

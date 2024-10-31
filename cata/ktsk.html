@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Kiểm tra sức khỏe</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../wstyle.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <link rel="shortcut icon" href="/images/anime-girls-genshin-impact-kamisato-ayaka-hd-wallpaper-preview.jpg" type="image/x-icon"> 
+</head>
+
+
+<body>
+    <header class="header">
+        <div class="container">
+            <div style="width: 20%;" class="left">
+                <a href="../index.html"><img class="logo" src="../images/logo.jpg" alt="logo nha thuoc" style="width: 19%;"></a>
+                <a style="text-decoration: none; color: black;" href="../index.html"><span style="text-align: center;font-size: 25px;">Nhà Thuốc</span></a>
+            </div>
+            <div class="search-bar">
+                <input type="text" placeholder="Tìm thuốc, triệu chứng, vitamin và thực phẩm chức năng" class="search-input">
+                <button class="search-btn">Search</button>
+                
+                <button style="background-color: #0096d6;border: none;margin-left: 20px;" id="opencnoti"><img style="width: 30px;" src="../images/noti.png" alt="thông báo" class="noti"></button>
+                <a href="cart.html"><img class="noti" src="../images/cart.png" alt="giỏ hàng"></a> 
+                <div class="overlay" id='popnoti'>
+                    <div class="popup" style="height: 60%;">
+                        <button id="closenoti" style="float: right;">x</button>
+                        <h3>Thông báo</h3>
+                        <br>
+                      <p>bạn khong co thong bao nao</p>
+                    </div>
+                    </div>
+            </div>
+            <div class="auth-buttons">
+                    <button class="btn auth-btn" id="openPopup">Đăng nhập</button>
+                    <div class="overlay" id="popupOverlay">
+                        <div class="popup">
+                            <button id="closePopup" style="float: right;">x</button>
+                          <h2>Đăng nhập</h2>
+                          <form>
+                            <input class="nhap-text required" type="text" name="fname" placeholder="Tên tài khoản" id="namedn"><br>
+                            <input class="nhap-text required" type="text" name="fname" placeholder="Mật khẩu" id="passdn"><br>
+                          </form>
+                          <a style="margin-right: 50px; float: right;" href="http://127.0.0.1:5500/quenmk.html">Quên mật khẩu ?</a>
+                          <br><br>
+                          <button class="dang-nhap" onclick="dangnhap()">Đăng nhập ngay</button><br>
+                          <button class="dang-ki" id="dkOpen">Tạo tài khoản mới</button>
+                          <div class="overlaydk" id="dkiOverlay">
+                            <div class="popupdk">
+                                <button id="dkClose" style="float: right;">x</button>
+                              <h2>Đăng Kí</h2>
+                              <form name="myForm" action="" onsubmit="return validateForm()" method="post">
+                                <input class="nhap-text" type="text" name="fname" placeholder="Tên tài khoản">
+                                <input class="nhap-text" type="text" name="fname" placeholder="Mật khẩu">
+                                <input type="text" class="nhap-text" placeholder="Nhập lại mật khẩu">
+                                <input type="text" class="nhap-text" placeholder="Nhập email của bạn">
+                              </form>
+                              <br><br>
+                              <button class="dang-ki" id="dkClose" onclick="dangki()">Đăng Kí</button><br>
+                          <br><br>
+                        </div>
+                        </div>
+                        
+                    </div>
+            </div>
+            
+        </div>
+    
+        </header>
+        <nav class="nav">
+            <div class="container">
+                <div class="menu">
+                    <a href="#">
+                        Danh mục
+                       </a>
+                       <a href="#">
+                        Thuốc
+                       </a>
+                       <a href="#">
+                        Trả cứu bệnh
+                       </a>
+                       <a href="#">
+                        Thực phẩm chức năng
+                       </a>
+                       <a href="#">
+                        Mẹ và bé
+                       </a>
+                       <a href="#">
+                        Doanh nghiệp
+                       </a>
+                       <a href="#">
+                        Nhận hàng Pharmacy
+                       </a>
+                       <a href="#">
+                        Chăm sóc cá nhân
+                       </a>
+                </div>
+            </div>
+        </nav><br>
+    <div class="ccontainer">
+        <div class="card-container">
+            <a href="#" class="card orange">
+                <i class="fas fa-notes-medical"></i>
+                <div class="text">Đánh giá nguy cơ mắc Bệnh hen suyễn</div>
+            </a>
+            <a href="#" class="card yellow">
+                <i class="fas fa-notes-medical"></i>
+                <div class="text">Đánh giá nguy cơ mắc Bệnh Phổi tắc nghẽn mạn tính (COPD)</div>
+            </a>
+            <a href="#" class="card blue">
+                <i class="fas fa-notes-medical"></i>
+                <div class="text">Đánh giá nguy cơ lạm dụng thuốc cắt cơn hen</div>
+            </a>
+            <a href="#" class="card purple">
+                <i class="fas fa-notes-medical"></i>
+                <div class="text">Đánh giá nguy cơ mắc Bệnh trào ngược dạ dày và thực quản (GERDQ)</div>
+            </a>
+        </div>
+        <div class="section">
+            <h2>Kiểm tra sức khỏe</h2>
+            <p>Chào mừng bạn đến với tính năng Kiểm tra Sức Khỏe của Pharmacy! Chỉ với vài phút trả lời các câu hỏi tâm soát về những vấn đề như hen suyễn, phổi tắc nghẽn mạn tính, trào ngược dạ dày và thực quản..., bạn sẽ nhận được các đánh giá bước đầu và lời khuyên hữu ích để chăm sóc sức khỏe. Đây là một trong những cách để bạn hiểu thêm về tình trạng cơ thể, qua đó biết cách ngăn ngừa bệnh và có các hành động kịp thời. Hãy khám phá ngay tính năng này và bắt đầu hành trình bảo vệ sức khỏe cho bạn và gia đình!</p>
+        </div>
+        <div class="section">
+            <h2>Miễn trừ trách nhiệm</h2>
+            <p>Các thông tin tại công cụ tâm soát này mang tính chất tham khảo. Nó không thay thế cho lời khuyên, chẩn đoán hoặc điều trị y tế chuyên nghiệp từ bác sĩ. Để biết rõ về tình trạng và nguy cơ mắc bệnh, hãy liên hệ ngay với Bác sĩ, Dược sĩ hoặc chuyên viên y tế để được tư vấn chi tiết cụ thể. Nếu có bất kỳ dấu hiệu bất thường nào trong tình trạng sức khỏe, hãy liên hệ ngay với bác sĩ để được hỗ trợ kịp thời.</p>
+            <p>Pharmacy cam kết đồng hành cùng bạn trong hành trình sống khỏe mạnh. Sứ mệnh của chúng tôi là giúp mọi người dễ dàng tiếp cận các công cụ chăm sóc sức khỏe và thông tin y tế, qua đó nâng cao chất lượng sống và nâng cao sức khỏe toàn diện.</p>
+            <p>Pharmacy – vì một cuộc sống khỏe mạnh và hạnh phúc cho tất cả!</p>
+        </div>
+        <div class="section">
+            <h2>Tài liệu tham khảo và thông tin lưu ý</h2>
+            <ul>
+                <li><a href="#">Làm thế nào phát hiện sớm hen phế quản</a></li>
+                <li><a href="#">Làm thế nào phát hiện sớm bệnh phổi tắc nghẽn mạn tính</a></li>
+            </ul>
+            <p class="note"><strong>Lưu ý:</strong> Việc sử dụng thuốc cắt cơn để giảm triệu chứng ≥3 lần/tuần là một trong các dấu hiệu đánh giá hen không kiểm soát (NICE 2017) hoặc kiểm soát một phần. Bệnh nhân có thể được yêu cầu trả lời thêm các câu hỏi từ bảng câu hỏi “Beliefs about Medicines Questionnaire”. Bảng câu hỏi này được thiết kế và phát triển bởi các chuyên gia lĩnh vực y học hành vi - Giáo sư Rob Horne, UCL. IPCRG được hỗ trợ bởi AstraZeneca trong “Asthma Right Care Initiative”.</p>
+            <p class="note">Jones R, Junghard O, Dent J, Vakil N, Halling K, Wernersson B, Lind T. Development of the GerdQ, a tool for the diagnosis and management of gastro-oesophageal reflux disease in primary care. Aliment Pharmacol Ther. 2009 Nov 15;30(10):1030-8. doi: 10.1111/j.1365-2036.2009.04142.x. Epub 2009 Sep 8. PMID: 19737151</p>
+        </div>
+    </div>
+    <footer class="footer">
+        <div class="container">
+            <div class="listed">
+                <div class="list">
+                    <h3>About nhà thuốc</h3>
+                        <a href="#">Giới thiệu</a><br>
+                        <a href="#">Hệ thống cửa hàng</a><br>
+                        <a href="#">Giấy phép kinh doanh</a><br>
+                        <a href="#">Quy chế hoạt động</a><br>
+                        <a href="#">Chính sách đổi trả</a><br>
+                        <a href="#">Câu hỏi thường gặp</a><br>
+                        <a href="#">Sitemap</a><br>
+                </div>
+                <div class="list">
+                    <h3>Danh mục</h3>
+                        <a href="#">Thuốc</a><br>
+                        <a href="#">Tra cứu bệnh</a><br>
+                        <a href="#">Thực phẩm chức năng</a><br>
+                        <a href="#">Chăm sóc cá nhân</a><br>
+                        <a href="#">Mẹ và Bé</a><br>
+                        <a href="#">Chăm sóc sắc đẹp</a><br>
+                        <a href="#">Thiết bị y tế</a><br>
+                        <a href="#">Sản phẩm tiện lợi</a><br>
+                        <a href="#">Doanh nghiệp</a><br>
+                        <a href="#">Nhãn hàng</a><br>
+                        <a href="#">Khuyến mãi HOT</a><br>
+                        <a href="#">Góc sức khỏe</a><br>
+                </div>
+                <div class="list">
+                    <h3>Tổng đài CSKH</h3>
+                        <a href="#">Hỗ trợ đặt hàng : <span style="color: blue;">1800 6821</span></a><br><br>
+                    <h3>Ngôn ngữ</h3>
+                    <a href="">Tiếng Việt</a><br>
+                    <a href="">Tiếng Anh</a><br>
+                    <a href="">Tiếng Trung</a><br>
+                </div>
+                <div class="list">
+                    <h3>Theo dõi chúng tôi trên</h3>
+                    <ul>
+                        <li><a href="#"><img src="https://prod-cdn.pharmacity.io/e-com/images/static-website/20240706163158-0-facebook.svg" alt=""> Facebook</a></li>
+                        <li><a href="#"><img src="https://prod-cdn.pharmacity.io/e-com/images/static-website/20240706163159-0-youtube.svg" alt=""> Youtube</a></li>
+                        <li><a href="#"><img src="https://prod-cdn.pharmacity.io/e-com/images/static-website/20240809162128-0-zalo.svg" width="20px"> Zalo</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="qlnt.js"></script>
+</body>
+
+
+
+</html>

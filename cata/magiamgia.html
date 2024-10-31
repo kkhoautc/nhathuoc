@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mã giảm giá</title>
+    <link rel="stylesheet" href="magiamgia.css">
+</head>
+<body>
+
+    <!-- Nút mở Modal -->
+    <button id="openModalBtn">Mở Modal</button>
+
+    <!-- Modal -->
+    <div id="myModal" class="modal">
+
+        <!-- Nội dung của Modal -->
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2><strong>XIN CHÀO,</strong></h2>
+            <p>Vui lòng nhập điện thoại để tiếp tục</p>
+
+            <!-- Form nhập số điện thoại -->
+            <div class="input-group">
+                <label for="phone">Số điện thoại</label>
+                <input type="text" id="phone" placeholder="Nhập số điện thoại">
+            </div>
+
+            <!-- Nút "Tiếp tục" -->
+            <button class="btn-continue" disabled>Tiếp tục</button>
+
+            <!-- Phân cách -->
+            <div class="divider">Hoặc</div>
+
+            <!-- Nút "Tiếp tục với Google" -->
+            <button class="btn-google">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/512px-Google_%22G%22_Logo.svg.png" alt="Google logo" width="20">
+                Tiếp tục với Google
+            </button>
+        </div>
+
+    </div>
+
+    <script src="magiamgia.js"></script>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quên mật khẩu</title>
+  
+  <style>
+    body{
+        background-color: aqua;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .container{
+        width: 40%;
+        text-align: center;
+        background-color: white;
+        border: 1px solid aqua;
+        border-radius: 10px;
+        margin-top: 1%;
+    }
+    .in{
+        padding: 10px 20px;
+        width: 70%;
+        border-radius: 10px;
+        margin-top: 10px;
+    }
+    button{
+        padding:10px 20px;
+        width: 60%;
+        border-radius: 5px;
+    }
+  </style>
+<body>
+    
+    <div class="container">
+        <h2>Quên mật khẩu</h2>
+        <p>Enter email address</p>
+        <input class="in" type="text" placeholder="example@gmail.com">
+        <br>
+        <button style="background-color: red;color: white;margin-top: 30px;" onclick="xacnhan()">Xác Nhận</button>
+        <br>
+        <button style="background-color: white;color: blue;" onclick="quaylai()">Quay lại</button>
+    </div>
+
+<script>
+    function xacnhan(){
+        alert("Link lấy lại mật khẩu đã gửi qua email của bạn")
+        window.location.href="http://127.0.0.1:5500/"
+    }
+    function quaylai(){
+        window.location.href="http://127.0.0.1:5500/"
+    }
+</script>
+</body>
+
+
+
+
+
+</html>

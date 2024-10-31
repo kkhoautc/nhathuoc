@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Doanh nghiệp</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../wstyle.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <link rel="shortcut icon" href="/images/anime-girls-genshin-impact-kamisato-ayaka-hd-wallpaper-preview.jpg" type="image/x-icon"> 
+</head>
+
+
+<body>
+    <header class="header">
+        <div class="container">
+            <div style="width: 20%;" class="left">
+                <a href="../index.html"><img class="logo" src="../images/logo.jpg" alt="logo nha thuoc" style="width: 19%;"></a>
+                <a style="text-decoration: none; color: black;" href="../index.html"><span style="text-align: center;font-size: 25px;">Nhà Thuốc</span></a>
+            </div>
+            <div class="search-bar">
+                <input type="text" placeholder="Tìm thuốc, triệu chứng, vitamin và thực phẩm chức năng" class="search-input">
+                <button class="search-btn">Search</button>
+                
+                <button style="background-color: #0096d6;border: none;margin-left: 20px;" id="opencnoti"><img style="width: 30px;" src="../images/noti.png" alt="thông báo" class="noti"></button>
+                <a href="cart.html"><img class="noti" src="../images/cart.png" alt="giỏ hàng"></a> 
+                <div class="overlay" id='popnoti'>
+                    <div class="popup" style="height: 60%;">
+                        <button id="closenoti" style="float: right;">x</button>
+                        <h3>Thông báo</h3>
+                        <br>
+                      <p>bạn khong co thong bao nao</p>
+                    </div>
+                    </div>
+            </div>
+            <div class="auth-buttons">
+                    <button class="btn auth-btn" id="openPopup">Đăng nhập</button>
+                    <div class="overlay" id="popupOverlay">
+                        <div class="popup">
+                            <button id="closePopup" style="float: right;">x</button>
+                          <h2>Đăng nhập</h2>
+                          <form>
+                            <input class="nhap-text required" type="text" name="fname" placeholder="Tên tài khoản" id="namedn"><br>
+                            <input class="nhap-text required" type="text" name="fname" placeholder="Mật khẩu" id="passdn"><br>
+                          </form>
+                          <a style="margin-right: 50px; float: right;" href="http://127.0.0.1:5500/quenmk.html">Quên mật khẩu ?</a>
+                          <br><br>
+                          <button class="dang-nhap" onclick="dangnhap()">Đăng nhập ngay</button><br>
+                          <button class="dang-ki" id="dkOpen">Tạo tài khoản mới</button>
+                          <div class="overlaydk" id="dkiOverlay">
+                            <div class="popupdk">
+                                <button id="dkClose" style="float: right;">x</button>
+                              <h2>Đăng Kí</h2>
+                              <form name="myForm" action="" onsubmit="return validateForm()" method="post">
+                                <input class="nhap-text" type="text" name="fname" placeholder="Tên tài khoản">
+                                <input class="nhap-text" type="text" name="fname" placeholder="Mật khẩu">
+                                <input type="text" class="nhap-text" placeholder="Nhập lại mật khẩu">
+                                <input type="text" class="nhap-text" placeholder="Nhập email của bạn">
+                              </form>
+                              <br><br>
+                              <button class="dang-ki" id="dkClose" onclick="dangki()">Đăng Kí</button><br>
+                          <br><br>
+                        </div>
+                        </div>
+                        
+                    </div>
+            </div>
+            
+        </div>
+    
+        </header>
+        <nav class="nav">
+            <div class="container">
+                <div class="menu">
+                    <a href="#">
+                        Danh mục
+                       </a>
+                       <a href="#">
+                        Thuốc
+                       </a>
+                       <a href="#">
+                        Trả cứu bệnh
+                       </a>
+                       <a href="#">
+                        Thực phẩm chức năng
+                       </a>
+                       <a href="#">
+                        Mẹ và bé
+                       </a>
+                       <a href="#">
+                        Doanh nghiệp
+                       </a>
+                       <a href="#">
+                        Nhận hàng Pharmacy
+                       </a>
+                       <a href="#">
+                        Chăm sóc cá nhân
+                       </a>
+                </div>
+            </div>
+        </nav><br>
+    <div class="doanhnghiep">
+        <img src="/images/Screenshot 2024-10-23 215739.png" alt="">
+        <h1>
+            LIÊN HỆ CHÚNG TÔI
+           </h1>
+           <div class="contact-container">
+            <div class="contact-item">
+                <a href="#"><img alt="Hotline icon" height="100" src="../images/33d71fed-751b-4bce-8c0e-21c03b836131.jpg" width="100"/></a>
+                <p>
+                    Hotline
+                 </p>
+            </div>
+            <div class="contact-item">
+                <a href="#"><img alt="Zalo icon" height="100" src="../images/5faafe81-095e-494e-9b7c-bd659c208871.jpg" width="100"/></a>
+             
+             <p>
+              Zalo
+             </p>
+            </div>
+            <div class="contact-item">
+                <a href="#"><img alt="Email icon" height="100" src="../images/37b30f2a-0988-441d-9c77-b32d2c06431f.jpg" width="100"/></a>
+             <p>
+              Email
+             </p>
+            </div>
+           </div>
+        <img src="../images/3c1484eb-7089-487a-9d63-94b6c5e4b729.jpg" alt="">
+        <img src="../images/228e2295-7fa7-45f2-b266-90e9b9e662aa.jpg" alt="">
+        <img src="../images/11790d13-da84-4146-92b6-dac642ead342.jpg" alt="">
+    </div>
+    <footer class="footer">
+        <div class="container">
+            <div class="listed">
+                <div class="list">
+                    <h3>About nhà thuốc</h3>
+                        <a href="#">Giới thiệu</a><br>
+                        <a href="#">Hệ thống cửa hàng</a><br>
+                        <a href="#">Giấy phép kinh doanh</a><br>
+                        <a href="#">Quy chế hoạt động</a><br>
+                        <a href="#">Chính sách đổi trả</a><br>
+                        <a href="#">Câu hỏi thường gặp</a><br>
+                        <a href="#">Sitemap</a><br>
+                </div>
+                <div class="list">
+                    <h3>Danh mục</h3>
+                        <a href="#">Thuốc</a><br>
+                        <a href="#">Tra cứu bệnh</a><br>
+                        <a href="#">Thực phẩm chức năng</a><br>
+                        <a href="#">Chăm sóc cá nhân</a><br>
+                        <a href="#">Mẹ và Bé</a><br>
+                        <a href="#">Chăm sóc sắc đẹp</a><br>
+                        <a href="#">Thiết bị y tế</a><br>
+                        <a href="#">Sản phẩm tiện lợi</a><br>
+                        <a href="#">Doanh nghiệp</a><br>
+                        <a href="#">Nhãn hàng</a><br>
+                        <a href="#">Khuyến mãi HOT</a><br>
+                        <a href="#">Góc sức khỏe</a><br>
+                </div>
+                <div class="list">
+                    <h3>Tổng đài CSKH</h3>
+                        <a href="#">Hỗ trợ đặt hàng : <span style="color: blue;">1800 6821</span></a><br><br>
+                    <h3>Ngôn ngữ</h3>
+                    <a href="">Tiếng Việt</a><br>
+                    <a href="">Tiếng Anh</a><br>
+                    <a href="">Tiếng Trung</a><br>
+                </div>
+                <div class="list">
+                    <h3>Theo dõi chúng tôi trên</h3>
+                    <ul>
+                        <li><a href="#"><img src="https://prod-cdn.pharmacity.io/e-com/images/static-website/20240706163158-0-facebook.svg" alt=""> Facebook</a></li>
+                        <li><a href="#"><img src="https://prod-cdn.pharmacity.io/e-com/images/static-website/20240706163159-0-youtube.svg" alt=""> Youtube</a></li>
+                        <li><a href="#"><img src="https://prod-cdn.pharmacity.io/e-com/images/static-website/20240809162128-0-zalo.svg" width="20px"> Zalo</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Trang chu</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="wstyle.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <link rel="icon" href="images/logo.jpg">
+</head>
+
+
+<body>
+    <header class="header">
+    <div class="container">
+        <div style="width: 20%;" class="left">
+            <a href="index.html"><img class="logo" src="./images/logo.jpg" alt="logo nha thuoc" style="width: 19%;"></a>
+            <a style="text-decoration: none; color: black;" href="index.html"><span style="text-align: center;font-size: 25px;">Nhà Thuốc</span></a>
+        </div>
+        <div class="search-bar">
+            <input type="text" placeholder="Tìm thuốc, triệu chứng, vitamin và thực phẩm chức năng" class="search-input">
+            <button class="search-btn">Search</button>
+            
+            <button style="background-color: #0096d6;border: none;margin-left: 20px;" id="opencnoti"><img style="width: 30px;" src="./images/noti.png" alt="thông báo" class="noti"></button>
+            <a href="cart.html"><img class="noti" src="./images/cart.png" alt="giỏ hàng"></a> 
+            <div class="overlay" id='popnoti'>
+                <div class="popup" style="height: 60%;">
+                    <button id="closenoti" style="float: right;">x</button>
+                    <h3>Thông báo</h3>
+                    <br>
+                  <p>bạn khong co thong bao nao</p>
+                </div>
+                </div>
+        </div>
+        <div class="auth-buttons">
+                <button class="btn auth-btn" id="openPopup">Đăng nhập</button>
+                <div class="overlay" id="popupOverlay">
+                    <div class="popup">
+                        <button id="closePopup" style="float: right;">x</button>
+                      <h2>Đăng nhập</h2>
+                      <form>
+                        <input class="nhap-text required" type="text" name="fname" placeholder="Tên tài khoản" id="namedn"><br>
+                        <input class="nhap-text required" type="text" name="fname" placeholder="Mật khẩu" id="passdn"><br>
+                      </form>
+                      <a style="margin-right: 50px; float: right;" href="http://127.0.0.1:5500/quenmk.html">Quên mật khẩu ?</a>
+                      <br><br>
+                      <button class="dang-nhap" onclick="dangnhap()">Đăng nhập ngay</button><br>
+                      <button class="dang-ki" id="dkOpen">Tạo tài khoản mới</button>
+                      <div class="overlaydk" id="dkiOverlay">
+                        <div class="popupdk">
+                            <button id="dkClose" style="float: right;">x</button>
+                          <h2>Đăng Kí</h2>
+                          <form name="myForm" action="" onsubmit="return validateForm()" method="post">
+                            <input class="nhap-text" type="text" name="fname" placeholder="Tên tài khoản">
+                            <input class="nhap-text" type="text" name="fname" placeholder="Mật khẩu">
+                            <input type="text" class="nhap-text" placeholder="Nhập lại mật khẩu">
+                            <input type="text" class="nhap-text" placeholder="Nhập email của bạn">
+                          </form>
+                          <br><br>
+                          <button class="dang-ki" id="dkClose" onclick="dangki()">Đăng Kí</button><br>
+                      <br><br>
+                    </div>
+                    </div>
+                    
+                </div>
+        </div>
+        
+    </div>
+
+    </header>
+    <nav class="nav">
+        <div class="container">
+            <div class="menu">
+                <a href="#">
+                    Danh mục
+                   </a>
+                   <a href="./nav/thuoc.html">
+                    Thuốc
+                   </a>
+                   <a href="./nav/tracuubenh.html">
+                    Trả cứu bệnh
+                   </a>
+                   <a href="./nav/thucphamchucnang.html">
+                    Thực phẩm chức năng
+                   </a>
+                   <a href="./nav/mevabe.html">
+                    Mẹ và bé
+                   </a>
+                   <a href="./cata/doanhnghiep.html">
+                    Doanh nghiệp
+                   </a>
+                   <a href="./nav/chamsocsacdep.html">
+                    Chăm sóc sắc đẹp
+                   </a>
+                   <a href="./nav/chamsoccanhan.html">
+                    Chăm sóc cá nhân
+                   </a>
+            </div>
+        </div>
+    </nav><br>
+    <div class="banner">
+        <div class="slider">
+            <button class="prev" onclick="changeSlide(-1)">&#60;</button>
+            
+            <div class="slides">
+              <a href="#"><img src="./images/banner1.webp" class="slide active" alt="Ảnh 1" width="100%"></a>
+              <a href="#"><img src="./images/banner2.png" class="slide" alt="Ảnh 2" width="100%"></a>
+              <a href="#"><img src="./images/banner3.webp" class="slide" alt="Ảnh 3" width="100%"></a>
+            </div>
+          
+            <button class="next" onclick="changeSlide(1)">&#62;</button>
+        </div>
+    </div><br>
+    <div class="categories">
+        <div class="category">
+         <a href="./cata/tuvanthuoc.html"><img alt="Category Image" height="50" src="./images/nav1.webp" width="50"/></a>
+         <p>
+          Tư vấn thuốc
+         </p>
+        </div>
+        <div class="category">
+            <a href="./nav/thuoc.html"><img alt="Category Image" height="50" src="./images/nav2.webp" width="50"/></a>
+         <p>
+          Đặt thuốc theo đơn
+         </p>
+        </div>
+        <div class="category">
+         <a href="#"><img alt="Category Image" height="50" src="./images/nav3.webp" width="50"/></a>
+         <p>
+          Chi tiêu sức khỏe
+         </p>
+        </div>
+        <div class="category">
+         <a href="./cata/timhieuthuoc.html"><img alt="Category Image" height="50" src="./images/nav4.webp" width="50"/></a>
+         <p>
+          Hệ thống nhà thuốc
+         </p>
+        </div>
+        <div class="category">
+         <a href="./cata/benhsoi.html"><img alt="Category Image" height="50" src="./images/nav5.webp" width="50"/></a>
+         <p>
+          Bệnh sởi
+         </p>
+        </div>
+        <div class="category">
+         <a href="./nav/tracuubenh.html"><img alt="Category Image" height="50" src="./images/nav6.webp" width="50"/></a>
+         <p>
+          Hồ sơ sức khỏe
+         </p>
+        </div>
+        <div class="category">
+         <a href="#"><img alt="Category Image" height="50" src="./images/nav7.webp" width="50"/></a>
+         <p>
+          Đặt lịch khám
+         </p>
+        </div>
+        
+    </div>
+    <div class="categories">
+        <div class="category">
+            <a href="./cata/dealhot.html"><img alt="Category Image" height="50" src="https://prod-cdn.pharmacity.io/e-com/images/ecommerce/20240823122418-0-Booking.png" width="50"/></a>
+            <p>
+             Deal hot tháng 10
+            </p>
+           </div>
+           <div class="category">
+            <button id="openModal" style="border: none;"><img alt="Category Image" height="50" src="https://prod-cdn.pharmacity.io/e-com/images/ecommerce/20240327032301-0-Booking%20%2816%29.png" width="50"/></button>
+            <p>
+             Mã giảm giá 
+            </p>
+           </div>
+           <div id="myModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2><strong>XIN CHÀO,</strong></h2>
+                <p>Vui lòng nhập điện thoại để tiếp tục</p>
+                <div class="input-group">
+                    <label for="phone">Số điện thoại</label>
+                    <input type="text" id="phone" placeholder="Nhập số điện thoại">
+                </div>
+                <button class="btn-continue" disabled>Tiếp tục</button>
+                <div class="divider">Hoặc</div>
+                <button class="btn-google">
+                    <img src="/images/image.png" alt="" width="20">
+                    Tiếp tục với Google
+                </button>
+            </div>
+            
+        </div>
+    
+           
+       
+           <div class="category">
+            <a href="./cata/doanhnghiep.html"><img alt="Category Image" height="50" src="https://prod-cdn.pharmacity.io/e-com/images/ecommerce/20240825092018-0-5.png" width="50"/></a>
+            <p>
+             Doanh nghiệp
+            </p>
+           </div>
+           <div class="category">
+            <a href="./cata/magen.html"><img alt="Category Image" height="50" src="https://prod-cdn.pharmacity.io/e-com/images/ecommerce/20240326143359-0-Booking-2.png" width="50"/></a>
+            <p>
+             Xét nghiệm Gen
+            </p>
+           </div>
+           <div class="category">
+            <button id="openModal" style="border: none;"><img alt="Category Image" id="openModal1" height="50" src="https://prod-cdn.pharmacity.io/e-com/images/ecommerce/20240825092138-0-4.png" width="50"/></button>
+            <p>
+             Hồ sơ gia đình
+            </p>
+           </div>
+           <div id="myModal1" class="modal">
+               <div class="modal-content">
+                   <span class="close">&times;</span>
+                   <h2><strong>XIN CHÀO,</strong></h2>
+                   <p>Vui lòng nhập điện thoại để tiếp tục</p>
+                   <div class="input-group">
+                       <label for="phone">Số điện thoại</label>
+                       <input type="text" id="phone" placeholder="Nhập số điện thoại">
+                   </div>
+                   <button class="btn-continue" disabled>Tiếp tục</button>
+                   <div class="divider">Hoặc</div>
+                   <button class="btn-google">
+                       <img src="/images/image.png" alt="" width="20">
+                       Tiếp tục với Google
+                   </button>
+               </div>
+               
+           </div>
+   
+           <div class="category">
+            <a href="./cata/lienhe.html"><img alt="Category Image" height="50" src="https://prod-cdn.pharmacity.io/e-com/images/ecommerce/20240717085927-0-Dealhot.png" width="50"/></a>
+            <p>
+             Liên hệ dược sĩ
+            </p>
+           </div>
+           <div class="category">
+            <a href="./cata/ktsk.html"><img alt="Category Image" height="50" src="https://prod-cdn.pharmacity.io/e-com/images/icon/20240912062123-0-PeriodicHealthCheck.png" width="50"/></a>
+            <p>
+             Kiểm tra sức khỏe
+            </p>
+           </div>
+           
+       </div>
+       <br><br><br>
+    <div id="popup1" class="popup1">
+        <div class="popup-content">
+            <span class="close" style="float: right;">&times;</span>
+            <h3 id="popup-title"></h3>
+            <div>
+            <img id="popup-image" src="" alt="Ảnh sản phẩm" class="popup-image">
+            </div>
+            <div style="margin-top: 20%;margin-left: 60%;text-align: left;">
+            <p>Số Lượng</p>
+            <input type="text" placeholder="Nhập số lượng" style="width: 70%;">
+            </div>
+            <div class="sluong">
+            <button onclick="mua()">Mua ngay</button>
+            <button onclick="giohang()">Thêm vào giỏ</button>
+            </div>
+        </div>
+    </div>
+    <div class="flashsale">
+        <div><br>
+            <img src="./images/fsale.png" alt="flashsale" width="20%" height="3%">
+        </div>
+        <div class="fcontainer">
+            <div class="fsale">
+                <img src="./images/a1.jpg" alt="sanpham">
+                <h5>Sữa chống nắng La Roche Posay</h5>
+                <p class="ilp">599.000 d/tuyp</p>
+                <p>476.000 d/Tuýp</p>
+                <button class="buy-button" data-product="Sữa chống nắng La Roche Posay" data-image="./images/a1.jpg">Mua sản phẩm</button>
+            </div>
+            <div class="fsale">
+                <img src="./images/a2.avif" alt="sanpham">
+                <h5>Combo Pharmacity giảm ho toàn diện</h5>
+                <p class="ilp">231.000 d/Hộp</p>
+                <p>144.000 d/Hộp</p>
+                <button class="buy-button" data-product="Combo Pharmacity giảm ho toàn diện" data-image="./images/a2.avif">Mua sản phẩm</button>
+            </div>
+            <div class="fsale">
+                <img src="./images/a3.avif" alt="sanpham">
+                <h5>Siro TRAPHACO Slaska giảm ho</h5>
+                <p class="ilp">59.000 d/Hộp</p>
+                <p>43.000 d/Hộp</p>
+                <button class="buy-button" data-product="Siro TRAPHACO Slaska giảm ho" data-image="./images/a3.avif">Mua sản phẩm</button>
+            </div>
+            <div class="fsale">
+                <img src="./images/a4.avif" alt="sanpham">
+                <h5>Siro MWE Eugic hỗ trợ giảm ho</h5>
+                <p class="ilp">99.000 d/ Hộp</p>
+                <p>73.000 d/ Hộp</p>
+                <button class="buy-button" data-product="Siro MWE Eugic hỗ trợ giảm ho" data-image="./images/a4.avif">Mua sản phẩm</button>
+            </div>
+            <div class="fsale">
+                <img src="./images/a5.avif" alt="sanpham">
+                <h5>Dầu gội làm sạch chấy cho bé Aladin</h5>
+                <p class="ilp">80.000 d/ Hộp</p>
+                <p>54.700 d/ Hộp</p>
+                <button class="buy-button" data-product="Dầu gội làm sạch chấy cho bé Aladin" data-image="./images/a5.avif">Mua sản phẩm</button>
+            </div>
+
+            <div class="fsale">
+                <img src="./images/a6.avif" alt="sanpham">
+                <h5>Bấm móng KỀM NGHĨA B903</h5>
+                <p class="ilp">40.000d /Cây</p>
+                <p>36.000 d/Cây</p>
+                <button class="buy-button" data-product="Bấm móng KỀM NGHĨA B903" data-image="./images/a6.avif">Mua sản phẩm</button>
+            </div>
+
+
+        </div>
+    </div><br><hr>
+    <div>
+        <h1>Top bán chạy toàn quốc</h1>
+    </div>
+    <div class="flashsale" style="background-image: none;" >
+        <div class="fcontainer">
+            <div class="fsale">
+                <img src="./images/a7.avif" alt="sanpham">
+                <h5>Dung dịch uống Duphalac 667g</h5>
+                <p>5.500 d/Gói</p>
+                <button class="buy-button" data-product="Dung dịch uống Duphalac 667g" data-image="./images/a7.avif">Mua sản phẩm</button>
+            </div>
+            <div class="fsale">
+                <img src="./images/a8.avif" alt="sanpham">
+                <h5>Bột pha uống Smecta  (hộp 10 gói)</h5>
+                <p>44.000 d/Hộp</p>
+                <button class="buy-button" data-product="Bột pha uống Smecta  (hộp 10 gói)" data-image="./images/a8.avif">Mua sản phẩm</button>
+            </div>
+            <div class="fsale">
+                <img src="./images/a9.avif" alt="sanpham">
+                <h5>Viên nén Tanakan 40mg (2 vỉ x 15 viên)</h5>
+                <p>50.000 d/Hộp</p>
+                <button class="buy-button" data-product="Viên nén Tanakan 40mg (2 vỉ x 15 viên)" data-image="./images/a9.avif">Mua sản phẩm</button>
+            </div>
+            <div class="fsale">
+                <img src="./images/a10.avif" alt="sanpham">
+                <h5>Viên nang kép Enzymax Duo (20 viên)</h5>
+                <p>99.000 d/ Hộp</p>
+                <button class="buy-button" data-product="Viên nang kép Enzymax Duo (20 viên)" data-image="./images/a10.avif">Mua sản phẩm</button>
+            </div>
+            <div class="fsale">
+                <img src="./images/a11.avif" alt="sanpham">
+                <h5>Thuốc nhỏ mắt Refresh Tears 20ml</h5>
+                <p>34.500 d/ Hộp</p>
+                <button class="buy-button" data-product="Thuốc nhỏ mắt Refresh Tears 20ml" data-image="./images/a11.avif">Mua sản phẩm</button>
+            </div>
+
+            <div class="fsale">
+                <img src="./images/a12.avif" alt="sanpham">
+                <h5>Hỗn dịch uống Enterogermina (10 ống)</h5>
+                <p>15.000 d/Ống</p>
+                <button class="buy-button" data-product="Hỗn dịch uống Enterogermina (10 ống)" data-image="./images/a12.avif">Mua sản phẩm</button>
+            </div>
+
+
+        </div>
+    </div><br><hr>
+    <div>
+        <h1>Sản phẩm mới</h1>
+    </div>
+    <div class="flashsale" style="background-image: none;">
+        <div class="fcontainer">
+            <div class="fsale">
+                <img src="./images/a13.webp" alt="sanpham">
+                <h5>Viên uống IMC Ích Giáp Vương (Hộp 30 viên)</h5>
+                <p>216.000 d/Hộp</p>
+                <button class="buy-button" data-product="Viên uống IMC Ích Giáp Vương (Hộp 30 viên)" data-image="./images/a13.webp">Mua sản phẩm</button>
+            </div>
+            <div class="fsale">
+                <img src="./images/a14.avif" alt="sanpham">
+                <h5>Siro Thái Minh Heviho hỗ trợ giảm ho 100ml</h5>
+                <p>144.000 d/Chai</p>
+                <button class="buy-button" data-product="Siro Thái Minh Heviho hỗ trợ giảm ho 100ml" data-image="./images/a14.avif">Mua sản phẩm</button>
+            </div>
+            <div class="fsale">
+                <img src="./images/a15.avif" alt="sanpham">
+                <h5>Cốm Big BB hỗ trợ tiêu hóa (Hộp 16 gói x 3g)</h5>
+                <p>153.000 d/Hộp</p>
+                <button class="buy-button" data-product="Cốm Big BB hỗ trợ tiêu hóa (Hộp 16 gói x 3g)" data-image="./images/a15.avif">Mua sản phẩm</button>
+            </div>
+            <div class="fsale">
+                <img src="./images/a16.avif" alt="sanpham">
+                <h5>Viên Boni Gout hỗ trợ giảm gút (Hộp 60 viên)</h5>
+                <p>472.000 d/ Hộp</p>
+                <button class="buy-button" data-product="Viên Boni Gout hỗ trợ giảm gút (Hộp 60 viên)" data-image="./images/a16.avif">Mua sản phẩm</button>
+            </div>
+            <div class="fsale">
+                <img src="./images/a17.avif" alt="sanpham">
+                <h5>Viên uống DOCTOR Liver hỗ trợ bảo vệ gan</h5>
+                <p>361.000 d/ Hộp</p>
+                <button class="buy-button" data-product="Viên uống DOCTOR Liver hỗ trợ bảo vệ gan" data-image="./images/a17.avif">Mua sản phẩm</button>
+            </div>
+
+            <div class="fsale">
+                <img src="./images/a18.webp" alt="sanpham">
+                <h5>Dung dịch NAM DƯỢC hỗ trợ bảo vệ gan</h5>
+                <p>126.000 d/Hộp</p>
+                <button class="buy-button" data-product="Dung dịch NAM DƯỢC hỗ trợ bảo vệ gan" data-image="./images/a18.webp">Mua sản phẩm</button>
+            </div>
+
+
+        </div>
+    </div><br>
+    <div><h1>Góc sức khỏe</h1></div>
+    <nav class="gsk">
+        <div class="container">
+            <div class="menu1">
+                <a href="#">
+                    Bài viết nổi bật
+                   </a>
+                   <a href="./gocsk/songkhoe.html">
+                    Sống khỏe
+                   </a>
+                   <a href="./gocsk/tintuc.html">
+                    Tin tức
+                   </a>
+                   <a href="./gocsk/songkhoe.html">
+                    Mẹ và bé
+                   </a>
+                   <a href="./gocsk/dinhduong.html">
+                    Gia Đình Và Giới Tính
+                   </a>
+                   <a href="./gocsk/benhthuuonggap.html">
+                    Bệnh thường gặp
+                   </a>
+                   <a href="./gocsk/lamdep.html">
+                    Làm đẹp
+                   </a>
+                   <a href="./gocsk/benhmantinh.html">
+                    Bệnh mãn tính
+                   </a>
+            </div>
+        </div>
+    </nav>
+    <div class="gsk1">
+        <div class="bao"><br><br>
+            <a href="./gocsk/pharagraph.html"><img src="https://production-cdn.pharmacity.io/digital/1080x0/plain/blog/PMC-ho-tro-bao-yagi-5.jpg" width="380" height="250"></a>
+            <div class="tin">
+                <p>Tin tức</p>
+            </div>
+            <a href="./gocsk/pharagraph.html"><h4>Pharmacity hỗ trợ sức khỏe người dân ở vùng bị ảnh hưởng sau bão lũ</h4></a>
+            <p>Sáng 17/9, Tổng giám đốc Công ty Cổ phần Dược phẩm Pharmacity đã đến thăm và tặng quà cho người dân tại xã...</p>
+        </div>
+        <div class="bao">
+            <a href="./gocsk/pharagraph2.html"><img src="https://production-cdn.pharmacity.io/digital/1080x0/plain/blog/THU-CU-DOI-MOI_384x287.jpg" width="380" height="250"></a>
+            <div class="tin">
+                <p>Sống khỏe</p>
+            </div>
+            <a href="./gocsk/pharagraph2.html"><h4>Chương trình thu xịt hen cũ - đổi xịt hen mới</h4></a>
+            <p>Từ ngày 09.05.2024, Pharmacity triển khai “Thu Cũ Đổi Mới” xịt hen...</p>
+        </div>
+        <div class="bao">
+            <a href="./gocsk/pharagraph2.html"><img src="https://production-cdn.pharmacity.io/digital/1080x0/plain/blog/bach-hau-1.jpg" width="380" height="250"></a>
+            <div class="tin">
+                <p>Bệnh thường gặp</p>
+            </div>
+            <a href="./gocsk/pharagraph2.html"><h4>Bệnh bạch hầu: Nguyên nhân, triệu chứng và các...</h4></a>
+            <p>Bạch hầu là một bệnh nhiễm khuẩn cấp tính nguy hiểm bởi các tổn thương...</p>
+        </div>
+    </div>
+    <br><br><hr>
+    <footer class="footer">
+        <div class="container">
+            <div class="listed">
+                <div class="list">
+                    <h3>About nhà thuốc</h3>
+                        <a href="#">Giới thiệu</a><br>
+                        <a href="#">Hệ thống cửa hàng</a><br>
+                        <a href="#">Giấy phép kinh doanh</a><br>
+                        <a href="#">Quy chế hoạt động</a><br>
+                        <a href="#">Chính sách đổi trả</a><br>
+                        <a href="#">Câu hỏi thường gặp</a><br>
+                        <a href="#">Sitemap</a><br>
+                </div>
+                <div class="list">
+                    <h3>Danh mục</h3>
+                        <a href="#">Thuốc</a><br>
+                        <a href="#">Tra cứu bệnh</a><br>
+                        <a href="#">Thực phẩm chức năng</a><br>
+                        <a href="#">Chăm sóc cá nhân</a><br>
+                        <a href="#">Mẹ và Bé</a><br>
+                        <a href="#">Chăm sóc sắc đẹp</a><br>
+                        <a href="#">Thiết bị y tế</a><br>
+                        <a href="#">Sản phẩm tiện lợi</a><br>
+                        <a href="#">Doanh nghiệp</a><br>
+                        <a href="#">Nhãn hàng</a><br>
+                        <a href="#">Khuyến mãi HOT</a><br>
+                        <a href="#">Góc sức khỏe</a><br>
+                </div>
+                <div class="list">
+                    <h3>Tổng đài CSKH</h3>
+                        <a href="#">Hỗ trợ đặt hàng : <span style="color: blue;">1800 6821</span></a><br><br>
+                    <h3>Ngôn ngữ</h3>
+                    <a href="">Tiếng Việt</a><br>
+                    <a href="">Tiếng Anh</a><br>
+                    <a href="">Tiếng Trung</a><br>
+                </div>
+                <div class="list">
+                    <h3>Theo dõi chúng tôi trên</h3>
+                    <ul>
+                        <li><a href="#"><img src="https://prod-cdn.pharmacity.io/e-com/images/static-website/20240706163158-0-facebook.svg" alt=""> Facebook</a></li>
+                        <li><a href="#"><img src="https://prod-cdn.pharmacity.io/e-com/images/static-website/20240706163159-0-youtube.svg" alt=""> Youtube</a></li>
+                        <li><a href="#"><img src="https://prod-cdn.pharmacity.io/e-com/images/static-website/20240809162128-0-zalo.svg" width="20px"> Zalo</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="trangchu.js"></script>
+</body>
+
+
+
+</html>

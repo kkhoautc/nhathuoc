@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="../wstyle.css">
+    <title>Gia đình và giới tính - Nhà thuốc</title>
+    <style>
+      
+
+      .search-bar {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+}
+.search-bar input {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    width: 300px;
+}
+.content {
+    padding: 20px;
+}
+.content h2 {
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+.main-article, .side-articles, .bottom-articles, .categories {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+.main-article img {
+    width: 100%;
+    border-radius: 10px;
+}
+.main-article h3 {
+    font-size: 18px;
+    margin: 10px 0;
+}
+.main-article p {
+    font-size: 14px;
+    color: #555;
+}
+.side-articles, .bottom-articles {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+.side-articles .article, .bottom-articles .article {
+    flex: 1 1 calc(33.333% - 20px);
+    display: flex;
+    flex-direction: column;
+}
+.side-articles .article img, .bottom-articles .article img {
+    width: 100%;
+    border-radius: 10px;
+}
+.side-articles .article h4, .bottom-articles .article h4 {
+    font-size: 16px;
+    margin: 10px 0;
+}
+.side-articles .article p, .bottom-articles .article p {
+    font-size: 14px;
+    color: #555;
+}
+a{
+  text-decoration: none;
+}
+
+    </style>
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+        <div style="width: 20%;" class="left">
+            <a href="../index.html"><img class="logo" src="../images/logo.jpg" alt="logo nha thuoc" style="width: 19%;"></a>
+            <a style="text-decoration: none; color: black;" href="../index.html"><span style="text-align: center;font-size: 25px;">Nhà Thuốc</span></a>
+        </div>
+        <div class="search-bar">
+            <input type="text" placeholder="Tìm thuốc, triệu chứng, vitamin và thực phẩm chức năng" class="search-input">
+            <button class="search-btn">Search</button>
+            
+            <button style="background-color: #0096d6;border: none;margin-left: 20px;" id="opencnoti"><img style="width: 30px;" src="../images/noti.png" alt="thông báo" class="noti"></button>
+            <a href="../cart.html"><img class="noti" src="../images/cart.png" alt="giỏ hàng"></a> 
+            <div class="overlay" id='popnoti'>
+                <div class="popup" style="height: 60%;">
+                    <button id="closenoti" style="float: right;">x</button>
+                    <h3>Thông báo</h3>
+                    <br>
+                  <p>bạn khong co thong bao nao</p>
+                </div>
+                </div>
+        </div>
+        <div class="auth-buttons">
+                <button class="btn auth-btn" id="openPopup">Đăng nhập</button>
+                <div class="overlay" id="popupOverlay">
+                    <div class="popup">
+                        <button id="closePopup" style="float: right;">x</button>
+                      <h2>Đăng nhập</h2>
+                      <form>
+                        <input class="nhap-text required" type="text" name="fname" placeholder="Tên tài khoản" id="namedn"><br>
+                        <input class="nhap-text required" type="text" name="fname" placeholder="Mật khẩu" id="passdn"><br>
+                      </form>
+                      <a style="margin-right: 50px; float: right;" href="http://127.0.0.1:5500/quenmk.html">Quên mật khẩu ?</a>
+                      <br><br>
+                      <button class="dang-nhap" onclick="dangnhap()">Đăng nhập ngay</button><br>
+                      <button class="dang-ki" id="dkOpen">Tạo tài khoản mới</button>
+                      <div class="overlaydk" id="dkiOverlay">
+                        <div class="popupdk">
+                            <button id="dkClose" style="float: right;">x</button>
+                          <h2>Đăng Kí</h2>
+                          <form name="myForm" action="" onsubmit="return validateForm()" method="post">
+                            <input class="nhap-text" type="text" name="fname" placeholder="Tên tài khoản">
+                            <input class="nhap-text" type="text" name="fname" placeholder="Mật khẩu">
+                            <input type="text" class="nhap-text" placeholder="Nhập lại mật khẩu">
+                            <input type="text" class="nhap-text" placeholder="Nhập email của bạn">
+                          </form>
+                          <br><br>
+                          <button class="dang-ki" id="dkClose" onclick="dangki()">Đăng Kí</button><br>
+                      <br><br>
+                    </div>
+                    </div>
+                    
+                </div>
+        </div>
+        
+    </div>
+  
+    </header>
+    <nav class="nav">
+        <div class="container">
+            <div class="menu">
+                <a href="#">
+                    Danh mục
+                   </a>
+                   <a href="../nav/thuoc.html">
+                    Thuốc
+                   </a>
+                   <a href="../nav/tracuubenh.html">
+                    Trả cứu bệnh
+                   </a>
+                   <a href="../nav/thucphamchucnang.html">
+                    Thực phẩm chức năng
+                   </a>
+                   <a href="../nav/mevabe.html">
+                    Mẹ và bé
+                   </a>
+                   <a href="../nav/doanhnghiep.html">
+                    Doanh nghiệp
+                   </a>
+                   <a href="../nav/chamsocsacdep.html">
+                    Chăm sóc sắc đẹp
+                   </a>
+                   <a href="../nav/chamsoccanhan.html">
+                    Chăm sóc cá nhân
+                   </a>
+            </div>
+        </div>
+    </nav><br>
+    <div class="header">
+        <h1>
+          Gia Đình Và Giới Tính
+        </h1>
+        <div class="search-bar">
+         <input placeholder="Tìm kiếm thông tin về bệnh..." type="text"/>
+        </div>
+       </div>
+       <div class="content">
+        <h2>
+         Bài viết nổi bật
+        </h2>
+        <div class="main-article">
+         <img alt="Triệu chứng suy tim giai đoạn cuối và phòng ngừa hiệu quả" height="400" src="images/Hau-la-thuc-pham-giup-tang-cuong-suc-khoe-sinh-ly-cho-nam-gioi-.avif" width="300"/>
+         <h3><a href="#">
+          Hướng dẫn sử dụng thuốc tránh thai: An toàn và hiệu quả
+          </a>
+         </h3>
+         <p>
+          Thuốc tránh thai hàng ngày là một loại thuốc uống dạng viên chứa thành phần hormone nữ (estrogen và progesterone) có tác dụng kiểm soát và ngăn cản sự rụng...
+         </p>
+        </div>
+        <div class="side-articles">
+         <div class="article">
+          <img alt="Xi hơi nhiều có sao không? Cách khắc phục tình trạng xi hơi" height="150" src="images/whoh0XRi-dom-1.avif" width="200"/>
+          <h4><a href="#">
+            Nâng niu sức khỏe, “giữ lữa” tình yêu cùng Love Good For Health
+        </a>
+          </h4>
+          <p>
+            Trước cuộc sống căng thẳng và bận rộn như ngày nay, dễ thấy cả nam giới và nữ giới đều không ít...
+          </p>
+         </div>
+         <div class="article">
+          <img alt="Đau dạ dày nên làm gì? Gợi ý 9 cách giảm đau dạ dày hiệu quả" height="150" src="images/tang-cuong-khi-huyet-2.avif" width="200"/>
+          <h4><a href="#">
+            [Hình ảnh] Các tư thế quan hệ tình dục mới lạ, nóng bỏng</a>
+          </h4>
+          <p>
+            Thực tế, một trong những cách để làm mới chuyện chăn gối cũng như giúp cả vợ và chồng đều “thỏa...
+          </p>
+         </div>
+         <div class="article">
+          <img alt="Top 9 cách trị chứng bụng đầy hơi đơn giản tại nhà" height="150" src="images/dot-quy-nhoi-mau-co-tim-2.avif" width="200"/>
+          <h4><a href="#">
+            Lên đỉnh khi mang thai 3 tháng đầu có nguy hiểm không?</a>
+          </h4>
+          <p>
+            Khi mang thai, nhiều cặp vợ chồng thường lo lắng về việc quan hệ tình dục, đặc biệt là trong ba tháng...
+          </p>
+         </div>
+         <div class="article">
+          <img alt="Viêm đại tràng: Triệu chứng, cách điều trị và phòng ngừa" height="150" src="images/MKBSmEJo-lao-hoa-da-1.avif" width="200"/>
+          <h4><a href="#">
+            7 “chiêu thức” làm tình giúp đưa vợ chồng cùng lên đỉnh</a>
+          </h4>
+          <p>
+            Quan hệ tình dục bằng nhiều tư thế khác nhau là một trong những phương pháp giúp các cặp đôi hâm nóng tình cảm hiệu quả...
+          </p>
+         </div>
+         <div class="article">
+          <img alt="Bệnh sán chó là gì? Cách sử dụng thuốc trị sán chó tại nhà" height="150" src="images/15e6c0d4-8656-4e1d-88f3-dae4708d2343.jpg" width="200"/>
+          <h4><a href="#">
+            Bí quyết tăng cường sinh lý nữ</a>
+          </h4>
+          <p>
+            Sức khỏe sinh lý là một phần quan trọng trong cuộc sống của mọi phụ nữ. Tăng cường sinh lý không...
+          </p>
+         </div>
+         <div class="article">
+          <img alt="Rối loạn nhịp tim: Biện pháp và lời khuyên từ chuyên gia" height="150" src="images/Hau-la-thuc-pham-giup-tang-cuong-suc-khoe-sinh-ly-cho-nam-gioi-.avif" width="200"/>
+          <h4><a href="#">
+            Ăn gì dễ thụ thai? Hạn chế ăn gì để dễ đậu thai?</a>
+          </h4>
+          <p>
+            Việc thụ thai và duy trì một thai kỳ khỏe mạnh phụ thuộc vào nhiều yếu tố như di truyền, lối sống và...
+          </p>
+         </div>
+        </div>
+        <div class="bottom-articles">
+         <div class="article">
+          <img alt="Mang thai tuần 39 bụng căng cứng là sắp sinh phải không?" height="150" src="images/Roi-loan-nhip-tim-3.avif" width="200"/>
+          <h4><a href="#">
+            Rocket 1h là gì? Tác dụng và cách sử dụng như thế nào?</a>
+          </h4>
+          <p>
+            Các sản phẩm hỗ trợ tăng cường sinh lý nam giới như rocket 1h có lẽ không còn qua xa lạ với nhiều người. Nhưng ít ai biết uống rocket 1h bao lâu trước khi quan hệ thì hiệu quả. Do đó, những thông tin hữu ích ngay trong bài viết sau sẽ giúp bạn […]
+          </p>
+         </div>
+         <div class="article">
+          <img alt="Tử cung ngả trước là gì? Có gây ảnh hưởng đến phụ nữ không?" height="150" src="images/394199cf-d02d-455a-8f7b-51172a7db8f1.jpg" width="200"/>
+          <h4><a href="#">
+            Các loại thực phẩm nên và không nên ăn trong kỳ kinh nguyệt
+        </a>
+          </h4>
+          <p>
+            Trong kỳ kinh nguyệt, cơ thể cần được nghỉ ngơi hợp lý và bổ sung đầy đủ các chất dinh dưỡng. Chế độ dinh dưỡng giúp cơ thể khỏe mạnh hơn và giảm cơn đau bụng kinh (nếu có). Hãy cùng tham khảo các loại thực phẩm nên và không nên ăn trong giai đoạn […]
+          </p>
+         </div>
+        </div>
+        
+    <footer class="footer">
+        <div class="container">
+            <div class="listed">
+                <div class="list">
+                    <h3>About nhà thuốc</h3>
+                        <a href="#">Giới thiệu</a><br>
+                        <a href="#">Hệ thống cửa hàng</a><br>
+                        <a href="#">Giấy phép kinh doanh</a><br>
+                        <a href="#">Quy chế hoạt động</a><br>
+                        <a href="#">Chính sách đổi trả</a><br>
+                        <a href="#">Câu hỏi thường gặp</a><br>
+                        <a href="#">Sitemap</a><br>
+                </div>
+                <div class="list">
+                    <h3>Danh mục</h3>
+                        <a href="#">Thuốc</a><br>
+                        <a href="#">Tra cứu bệnh</a><br>
+                        <a href="#">Thực phẩm chức năng</a><br>
+                        <a href="#">Chăm sóc cá nhân</a><br>
+                        <a href="#">Mẹ và Bé</a><br>
+                        <a href="#">Chăm sóc sắc đẹp</a><br>
+                        <a href="#">Thiết bị y tế</a><br>
+                        <a href="#">Sản phẩm tiện lợi</a><br>
+                        <a href="#">Doanh nghiệp</a><br>
+                        <a href="#">Nhãn hàng</a><br>
+                        <a href="#">Khuyến mãi HOT</a><br>
+                        <a href="#">Góc sức khỏe</a><br>
+                </div>
+                <div class="list">
+                    <h3>Tổng đài CSKH</h3>
+                        <a href="#">Hỗ trợ đặt hàng : <span style="color: blue;">1800 6821</span></a><br><br>
+                    <h3>Ngôn ngữ</h3>
+                    <a href="">Tiếng Việt</a><br>
+                    <a href="">Tiếng Anh</a><br>
+                    <a href="">Tiếng Trung</a><br>
+                </div>
+                <div class="list">
+                    <h3>Theo dõi chúng tôi trên</h3>
+                    <ul>
+                        <li><a href="#"><img src="https://prod-cdn.pharmacity.io/e-com/images/static-website/20240706163158-0-facebook.svg" alt=""> Facebook</a></li>
+                        <li><a href="#"><img src="https://prod-cdn.pharmacity.io/e-com/images/static-website/20240706163159-0-youtube.svg" alt=""> Youtube</a></li>
+                        <li><a href="#"><img src="https://prod-cdn.pharmacity.io/e-com/images/static-website/20240809162128-0-zalo.svg" width="20px"> Zalo</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="../trangchu.js"></script>
+</body>
+</html>

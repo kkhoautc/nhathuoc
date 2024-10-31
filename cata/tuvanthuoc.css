@@ -1,0 +1,285 @@
+*{
+    box-sizing: border-box;
+}
+.header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+
+}
+.header{
+    background-color: #0096d6;
+    padding: 20px;
+}
+.logo{
+    width: 50%;
+    height: auto;
+    padding: 0;
+    align-self: center;
+}
+.search-bar {
+    width: 60%;
+    align-items: center;
+    display: flex;
+    margin: 0 20px;
+}
+.noti{
+    width: 30px;
+    margin-left: 20px;
+    padding: 0;
+}
+.search-input {
+    width: 300px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px 0 0 5px;
+    outline: none;
+}
+.search-btn {
+    padding: 10px 20px;
+    background-color: #007bbd;
+    color: white;
+    border: none;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+}
+.search-btn:hover {
+    background-color: #005f8a;
+}
+.auth-buttons {
+    display: flex;
+    align-items: center;
+    float: right;
+}
+
+.auth-btn {
+    background-color: #fff;
+    color: #0096d6;
+    border: 1px solid #fff;
+    padding: 10px 20px;
+    margin-left: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s, color 0.3s;
+}
+
+.auth-btn:hover {
+    background-color: #0096d6;
+    color: white;
+    border: 1px solid #0096d6;
+}
+.nav{
+    background-color: rgb(75, 107, 214);
+    color: white;
+    padding: 10px 0;
+}
+.nav .menu{
+    display:grid;
+    grid-template-columns: auto auto auto auto auto auto auto auto;
+    margin: 0 250px;
+}
+.nav .menu a{
+    color: white;
+    margin-left: 20px;
+    text-decoration: none;
+}
+.advise {
+    width: 61%;
+    margin: 0 auto;
+}
+
+.consultation-section {
+    display: flex;
+    justify-content: space-between;
+    background-color: white;
+    border: 1px solid #dee2e6;
+    padding: 20px;
+    border-radius: 8px;
+    border: none;
+}
+
+.consultation-box {
+    width: 65%;
+}
+.consultation-box h2 {
+    margin-left: 10px;
+}
+.box-color {
+    background-color:#0096d6;
+    padding: 15px;
+    border-radius: 10px;
+}
+.box-color h3 {
+    color: white;
+}
+
+.box-color p {
+    font-size: 14px;
+    color: white;
+}
+
+.search-bar {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.search input {
+    width: 80%;
+    padding: 10px;
+    border: 1px solid #dee2e6;
+    border-radius: 5px;
+    margin-bottom: 40px;
+}
+
+.search button {
+    background-color: #0d6efd;
+    border: none;
+    color: white;
+    padding: 10px;
+    margin-left: 5px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.side-options {
+    width: 30%;
+}
+
+.option {
+    background-color: #f8f9fa;
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    height: 125px;
+}
+
+.option h4 {
+    font-size: 16px;
+    color: #333;
+    margin-left: 50px ;
+}
+
+.option p {
+    font-size: 14px;
+    color: #666;
+    margin: 10px 0;
+    margin-left: 50px;
+}
+
+.option a {
+    display: block;
+    color: #007bff;
+    text-decoration: none;
+    margin-left:  50px;
+    font-weight: bold;
+}
+
+.option:first-child {
+    background-color: #fff7f2;
+    border-color: #ffc107;
+}
+
+.option:last-child {
+    background-color: #f2f8ff;
+    border-color: #007bff;
+}
+.hr-step {
+    width: 100%;
+    padding: 5px;
+    background-color: #dedede;
+    border: none;
+}
+.step-container {
+    display: flex;
+    justify-content: space-around;
+    padding: 40px;
+    margin: 0 330px;
+    
+}
+.step {
+    border: none;
+    padding: 20px;
+    border-radius: 5px;
+    width: 500px;
+}
+.note {
+    background-color: green;
+    color: white;
+    border-radius: 10px;
+    padding: 5px;
+}
+
+.distance {
+    height: 1px;
+}
+
+.step-header {
+    font-weight: bold;
+    margin-bottom: 10px;
+    height: 40px
+}
+.step-content {
+    margin-bottom: 20px;
+}
+.step-image {
+    width: 100%;
+    height: 160px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.pharmacy-info {
+    margin: 0 380px;
+}
+.footer .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+
+}
+.footer{
+    background-color: #dedede;
+    padding: 20px;
+}
+.footer .container .listed{
+    width: 100%;
+}
+footer .container .listed .list{
+    width: 20%;
+    line-height: 30px;
+    float: left;
+    margin: 2%;
+}
+footer .container .listed .list a{
+    text-decoration: none;
+    margin-top: 20px;
+    padding-bottom: 5px;
+    color: rgb(44, 40, 40);
+    font-weight: 12px;
+}
+footer .container .listed .list a:hover{
+    color: blue;
+}
+.footer .container .lis{
+    width: 30%;
+    float: left;
+}
+footer .container .listed .list ul li{
+    list-style-type: none;
+}
+button:hover{
+    color: blue;
+    cursor: pointer;
+}
+.hr-footer{
+    width: 100%;
+    padding: 5px;
+    background-color: #005f8a;
+}

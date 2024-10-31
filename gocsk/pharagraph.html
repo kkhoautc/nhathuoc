@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="../wstyle.css">
+    <title>Tin tức - Nhà thuốc</title>
+    <style>
+        
+p{
+    font-size: 16px;
+    text-align: center;
+    width: 100%;
+}
+iframe{
+    display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+.container2{
+    width: 90%;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+    </style>
+</head>
+
+<body>
+    <header class="header">
+        <div class="container">
+            <div style="width: 20%;" class="left">
+                <a href="../index.html"><img class="logo" src="../images/logo.jpg" alt="logo nha thuoc" style="width: 19%;"></a>
+                <a style="text-decoration: none; color: black;" href="../index.html"><span style="text-align: center;font-size: 25px;">Nhà Thuốc</span></a>
+            </div>
+            <div class="search-bar">
+                <input type="text" placeholder="Tìm thuốc, triệu chứng, vitamin và thực phẩm chức năng" class="search-input">
+                <button class="search-btn">Search</button>
+                
+                <button style="background-color: #0096d6;border: none;margin-left: 20px;" id="opencnoti"><img style="width: 30px;" src="../images/noti.png" alt="thông báo" class="noti"></button>
+                <a href="../cart.html"><img class="noti" src="../images/cart.png" alt="giỏ hàng"></a> 
+                <div class="overlay" id='popnoti'>
+                    <div class="popup" style="height: 60%;">
+                        <button id="closenoti" style="float: right;">x</button>
+                        <h3>Thông báo</h3>
+                        <br>
+                      <p>bạn khong co thong bao nao</p>
+                    </div>
+                    </div>
+            </div>
+            <div class="auth-buttons">
+                    <button class="btn auth-btn" id="openPopup">Đăng nhập</button>
+                    <div class="overlay" id="popupOverlay">
+                        <div class="popup">
+                            <button id="closePopup" style="float: right;">x</button>
+                          <h2>Đăng nhập</h2>
+                          <form>
+                            <input class="nhap-text required" type="text" name="fname" placeholder="Tên tài khoản" id="namedn"><br>
+                            <input class="nhap-text required" type="text" name="fname" placeholder="Mật khẩu" id="passdn"><br>
+                          </form>
+                          <a style="margin-right: 50px; float: right;" href="http://127.0.0.1:5500/quenmk.html">Quên mật khẩu ?</a>
+                          <br><br>
+                          <button class="dang-nhap" onclick="dangnhap()">Đăng nhập ngay</button><br>
+                          <button class="dang-ki" id="dkOpen">Tạo tài khoản mới</button>
+                          <div class="overlaydk" id="dkiOverlay">
+                            <div class="popupdk">
+                                <button id="dkClose" style="float: right;">x</button>
+                              <h2>Đăng Kí</h2>
+                              <form name="myForm" action="" onsubmit="return validateForm()" method="post">
+                                <input class="nhap-text" type="text" name="fname" placeholder="Tên tài khoản">
+                                <input class="nhap-text" type="text" name="fname" placeholder="Mật khẩu">
+                                <input type="text" class="nhap-text" placeholder="Nhập lại mật khẩu">
+                                <input type="text" class="nhap-text" placeholder="Nhập email của bạn">
+                              </form>
+                              <br><br>
+                              <button class="dang-ki" id="dkClose" onclick="dangki()">Đăng Kí</button><br>
+                          <br><br>
+                        </div>
+                        </div>
+                        
+                    </div>
+            </div>
+            
+        </div>
+      
+        </header>
+        <nav class="nav">
+            <div class="container">
+                <div class="menu">
+                    <a href="#">
+                        Danh mục
+                       </a>
+                       <a href="../nav/thuoc.html">
+                        Thuốc
+                       </a>
+                       <a href="../nav/tracuubenh.html">
+                        Trả cứu bệnh
+                       </a>
+                       <a href="../nav/thucphamchucnang.html">
+                        Thực phẩm chức năng
+                       </a>
+                       <a href="../nav/mevabe.html">
+                        Mẹ và bé
+                       </a>
+                       <a href="../nav/doanhnghiep.html">
+                        Doanh nghiệp
+                       </a>
+                       <a href="../nav/chamsocsacdep.html">
+                        Chăm sóc sắc đẹp
+                       </a>
+                       <a href="../nav/chamsoccanhan.html">
+                        Chăm sóc cá nhân
+                       </a>
+                </div>
+            </div>
+        </nav><br>
+    <div class="container2">
+    <h1>Pharmacity hỗ trợ sức khỏe người dân ở vùng bị ảnh hưởng sau bão lũ</h1>
+    <div>Sáng 17/9, Tổng giám đốc Công ty Cổ phần Dược phẩm Pharmacity đã đến thăm và tặng quà cho người dân tại xã Hiền Lương, huyện Hạ Hòa, tỉnh Phú Thọ. Đây là địa phương có nhiều hộ dân vẫn còn bị chia cắt bởi nước lũ, trong khi một số nơi khác đã bắt đầu bước vào công cuộc tái thiết cuộc sống sau khi chịu ảnh hưởng nặng nề từ cơn bão số 3.</div>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/YZGTtaGE29U?si=2C6cAa39FV4JWlcr" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    <p>Theo các chuyên gia Cục Y tế dự phòng, trong và sau mưa bão, lũ lụt, vô số các vi sinh vật, bụi, rác, chất thải… theo dòng nước tràn ra nhiều nơi, gây ô nhiễm môi trường và tiềm ẩn nguy cơ dịch bệnh. Đây chính là thời điểm cần tăng cường phòng ngừa bệnh truyền nhiễm tại các vùng ngập lụt. Bên cạnh đó, bão lũ cũng khiến nguồn nước sạch của nhiều khu vực bị ảnh hưởng nghiêm trọng. Nắm bắt được tình hình đó, Pharmacity đã đến trao tặng các phần quà là các liều thuốc hạ sốt và nước uống với hy vọng giúp một tay bảo vệ sức khỏe để người dân có thể nhanh chóng tái thiết cuộc sống.  </p>
+    <p>Xã Hiền Lương nằm trong số nhiều xã của huyện Hạ Hòa nói riêng và tỉnh Phú Thọ nói chung vẫn còn nhiều hộ gia đình bị nước bao quanh. Ông Nguyễn Công Tiến, Chủ Tịch Ủy Ban Mặt Trận Tổ Quốc xã Hiền Lương cho biết: “Nhiều hộ gia đình đến ngày hôm nay mới có thể về nhà để dọn dẹp, vì đến tận hôm qua nước vẫn còn ngập đến ngang nửa nhà, hoặc thậm chí còn vượt qua nóc một số nhà”. Theo ông Tiến, đối với những hộ dân bị bao quanh bởi mực nước tương đối thì các cấp chính quyền và các đoàn cứu hộ có thể tiếp cận để hỗ trợ các vật phẩm, lương thực cần thiết. Khi nước bắt đầu rút, mực nước cạn kèm rất nhiều rác và vật dụng bị trôi ngổn ngang phía dưới khiến các thuyền nhỏ không thể đi chuyển, công tác tiếp cận vì vậy lại càng khó khăn. Nhìn chung cuộc sống của người dân sau khi nước rút vẫn còn rất nhiều việc phải làm và vẫn rất cần sự quan tâm, hỗ trợ từ nhiều phía.</p>
+    <p>Có mặt tại buổi thăm hỏi và trao quà, ông Deepanshu Madan – Tổng giám đốc của Pharmacity bày tỏ sự xúc động trước những khó khăn của người dân địa phương: “Tôi nhận thấy những khó khăn mà người dân ở đây đang đối mặt và cam kết sẽ thể hiện vai trò của mình nhiều hơn nữa trong việc hỗ trợ tài chính cho những người bị ảnh hưởng cũng như cải thiện khả năng tiếp cận dịch vụ chăm sóc sức khỏe cho đồng bào của chúng ta.”. CEO người Ấn Độ của chuỗi nhà thuốc hàng đầu Việt Nam tin rằng với truyền thống kiên cường, không ngại gian khó của người Việt, tất cả người dân xã Hiền Lương sẽ sớm trở lại được với cuộc sống sung túc, thịnh vượng như trước đây. Trong đợt trao quà này, Pharmacity đã dành tặng 5.000 liều thuốc, 4.000 chai nước lọc và nhiều phần quà bằng hiện kim cho người dân bị ảnh hưởng tại đây. Đặc biệt, phần hiện kim được trao tặng chính là  từ sự quyên góp của các nhân viên nhà thuốc Pharmacity và nhà cung cấp Exeltis Pharma.</p>
+    <p>Hoạt động tại xã Hiền Lương nằm trong chuỗi hoạt động thiện nguyện của Pharmacity hướng về đồng bào miền Bắc gặp khó khăn do ảnh hưởng của bão số 3, hưởng ứng lời kêu gọi của Đoàn Chủ tịch Ủy ban Trung ương MTTQ Việt Nam và Ban Thường trực Ủy ban MTTQ Việt Nam Thành phố Hồ Chí Minh. Trước đó, Pharmacity cũng đã vận động các nhà cung cấp dược phẩm tham gia vào các hoạt động trao tặng thuốc và quà cho người dân tại các tỉnh Yên Bái, huyện đảo Bạch Long Vĩ theo lời kêu gọi của Bộ Y Tế, Bộ Quốc Phòng và Hội bảo vệ trẻ em Việt Nam. Pharmacity cũng dành tặng 1.000 túi thuốc gia đình cho nhân dân tỉnh Bắc Giang trong chiến dịch 30.000 túi thuốc gia đình cho miền Bắc do Sở Y Tế TP.HCM phát động. </p>
+</div>
+    <footer class="footer">
+        <div class="container">
+            <div class="listed">
+                <div class="list">
+                    <h3>About nhà thuốc</h3>
+                        <a href="#">Giới thiệu</a><br>
+                        <a href="#">Hệ thống cửa hàng</a><br>
+                        <a href="#">Giấy phép kinh doanh</a><br>
+                        <a href="#">Quy chế hoạt động</a><br>
+                        <a href="#">Chính sách đổi trả</a><br>
+                        <a href="#">Câu hỏi thường gặp</a><br>
+                        <a href="#">Sitemap</a><br>
+                </div>
+                <div class="list">
+                    <h3>Danh mục</h3>
+                        <a href="#">Thuốc</a><br>
+                        <a href="#">Tra cứu bệnh</a><br>
+                        <a href="#">Thực phẩm chức năng</a><br>
+                        <a href="#">Chăm sóc cá nhân</a><br>
+                        <a href="#">Mẹ và Bé</a><br>
+                        <a href="#">Chăm sóc sắc đẹp</a><br>
+                        <a href="#">Thiết bị y tế</a><br>
+                        <a href="#">Sản phẩm tiện lợi</a><br>
+                        <a href="#">Doanh nghiệp</a><br>
+                        <a href="#">Nhãn hàng</a><br>
+                        <a href="#">Khuyến mãi HOT</a><br>
+                        <a href="#">Góc sức khỏe</a><br>
+                </div>
+                <div class="list">
+                    <h3>Tổng đài CSKH</h3>
+                        <a href="#">Hỗ trợ đặt hàng : <span style="color: blue;">1800 6821</span></a><br><br>
+                    <h3>Ngôn ngữ</h3>
+                    <a href="">Tiếng Việt</a><br>
+                    <a href="">Tiếng Anh</a><br>
+                    <a href="">Tiếng Trung</a><br>
+                </div>
+                <div class="list">
+                    <h3>Theo dõi chúng tôi trên</h3>
+                    <ul>
+                        <li><a href="#"><img src="https://prod-cdn.pharmacity.io/e-com/images/static-website/20240706163158-0-facebook.svg" alt=""> Facebook</a></li>
+                        <li><a href="#"><img src="https://prod-cdn.pharmacity.io/e-com/images/static-website/20240706163159-0-youtube.svg" alt=""> Youtube</a></li>
+                        <li><a href="#"><img src="https://prod-cdn.pharmacity.io/e-com/images/static-website/20240809162128-0-zalo.svg" width="20px"> Zalo</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="../trangchu.js"></script>
+</body>
+</html>

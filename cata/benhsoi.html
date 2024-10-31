@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Bệnh sởi</title>\
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../wstyle.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <meta http-equiv="refresh" content="60">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <style>
+        
+.information {
+    margin: 0 auto;
+    width: 800px;
+}
+
+table {
+    width: 800px;
+}
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse ;
+    
+}
+p {
+    font-size: 20px;
+}
+li {
+    font-size: 18px;
+}
+
+    </style>
+</head>
+
+
+<body>
+    <header class="header">
+        <div class="container">
+            <div style="width: 20%;" class="left">
+                <a href="../index.html"><img class="logo" src="../images/logo.jpg" alt="logo nha thuoc" style="width: 19%;"></a>
+                <a style="text-decoration: none; color: black;" href="../index.html"><span style="text-align: center;font-size: 25px;">Nhà Thuốc</span></a>
+            </div>
+            <div class="search-bar">
+                <input type="text" placeholder="Tìm thuốc, triệu chứng, vitamin và thực phẩm chức năng" class="search-input">
+                <button class="search-btn">Search</button>
+                
+                <button style="background-color: #0096d6;border: none;margin-left: 20px;" id="opencnoti"><img style="width: 30px;" src="../images/noti.png" alt="thông báo" class="noti"></button>
+                <a href="../cart.html"><img class="noti" src="../images/cart.png" alt="giỏ hàng"></a> 
+                <div class="overlay" id='popnoti'>
+                    <div class="popup" style="height: 60%;">
+                        <button id="closenoti" style="float: right;">x</button>
+                        <h3>Thông báo</h3>
+                        <br>
+                      <p>bạn khong co thong bao nao</p>
+                    </div>
+                    </div>
+            </div>
+            <div class="auth-buttons">
+                    <button class="btn auth-btn" id="openPopup">Đăng nhập</button>
+                    <div class="overlay" id="popupOverlay">
+                        <div class="popup">
+                            <button id="closePopup" style="float: right;">x</button>
+                          <h2>Đăng nhập</h2>
+                          <form>
+                            <input class="nhap-text required" type="text" name="fname" placeholder="Tên tài khoản" id="namedn"><br>
+                            <input class="nhap-text required" type="text" name="fname" placeholder="Mật khẩu" id="passdn"><br>
+                          </form>
+                          <a style="margin-right: 50px; float: right;" href="http://127.0.0.1:5500/quenmk.html">Quên mật khẩu ?</a>
+                          <br><br>
+                          <button class="dang-nhap" onclick="dangnhap()">Đăng nhập ngay</button><br>
+                          <button class="dang-ki" id="dkOpen">Tạo tài khoản mới</button>
+                          <div class="overlaydk" id="dkiOverlay">
+                            <div class="popupdk">
+                                <button id="dkClose" style="float: right;">x</button>
+                              <h2>Đăng Kí</h2>
+                              <form name="myForm" action="" onsubmit="return validateForm()" method="post">
+                                <input class="nhap-text" type="text" name="fname" placeholder="Tên tài khoản">
+                                <input class="nhap-text" type="text" name="fname" placeholder="Mật khẩu">
+                                <input type="text" class="nhap-text" placeholder="Nhập lại mật khẩu">
+                                <input type="text" class="nhap-text" placeholder="Nhập email của bạn">
+                              </form>
+                              <br><br>
+                              <button class="dang-ki" id="dkClose" onclick="dangki()">Đăng Kí</button><br>
+                          <br><br>
+                        </div>
+                        </div>
+                        
+                    </div>
+            </div>
+            
+        </div>
+      
+        </header>
+        <nav class="nav">
+            <div class="container">
+                <div class="menu">
+                    <a href="#">
+                        Danh mục
+                       </a>
+                       <a href="../nav/thuoc.html">
+                        Thuốc
+                       </a>
+                       <a href="../nav/tracuubenh.html">
+                        Trả cứu bệnh
+                       </a>
+                       <a href="../nav/thucphamchucnang.html">
+                        Thực phẩm chức năng
+                       </a>
+                       <a href="../nav/mevabe.html">
+                        Mẹ và bé
+                       </a>
+                       <a href="../nav/doanhnghiep.html">
+                        Doanh nghiệp
+                       </a>
+                       <a href="../nav/chamsocsacdep.html">
+                        Chăm sóc sắc đẹp
+                       </a>
+                       <a href="../nav/chamsoccanhan.html">
+                        Chăm sóc cá nhân
+                       </a>
+                </div>
+            </div>
+        </nav><br>
+    <div class="information">
+        <h1>Bệnh sởi là gì? Những điều cần biết về bệnh sởi</h1>
+        <p>Bệnh sởi là bệnh lây truyền cấp tính qua đường hô hấp, do virus thuộc giống Morbillivirus của họ Paramyxoviridae gây nên.</p>
+        <p>Sởi là một bệnh lưu hành rộng, vì thế bệnh liên tục xuất hiện trong cộng đồng, cộng thêm mức độ lây lan của bệnh rất nhanh nên rất dễ bùng phát thành dịch.</p>
+        <p>Lứa tuổi mắc bệnh chủ yếu ở trẻ dưới 10 tuổi, đặc biệt là trẻ nhỏ dưới 5 tuổi. Tuy nhiên, hiện nay bệnh đã xuất hiện ở người lớn do chưa được tiêm phòng hoặc đã tiêm phòng nhưng chưa được tiêm nhắc lại.</p>
+        <p>Đến nay, sởi vẫn là bệnh truyền nhiễm nguy hiểm gây dịch và là một trong những nguyên nhân tử vong ở trẻ em dưới 5 tuổi. Bệnh có tốc độ lây nhiễm rất cao, đặc biệt ở nhóm người chưa có miễn dịch phòng bệnh sởi do chưa được tiêm chủng vắc xin sởi, chưa từng mắc bệnh sởi trước đó.</p>
+        <img alt="" src="images/benhsoi.jpg" width="800" height="400">
+        <h1>Triệu chứng của bệnh sởi</h1>
+        <p>Tùy theo từng giai đoạn mà các triệu chứng của bệnh Sởi sẽ có sự khác nhau:</p>
+        <h2 >Giai đoạn ủ bệnh: trung bình khoảng 10 ngày</h2>
+        <p>Đây là giai đoạn bệnh chưa có triệu chứng nào cả.</p>
+        <h2>Giai đoạn khởi phát (viêm long): 2 - 4 ngày</h2>
+        <p>Lúc này người bệnh sẽ bị sốt cao, viêm kết mạc, viêm long đường hô hấp trên, bề mặt niêm mạc má có các hạt Koplik nhỏ kích thước 0,5 - 1mm màu trắng/xám với quầng ban đỏ nổi gồ lên.</p>
+        <h2>Giai đoạn toàn phát: 2 - 5 ngày</h2>
+        <p>Sau khi sốt cao 3 - 4 ngày bắt đầu xuất hiện tình trạng phát ban dạng ban hồng dát sẩn, nếu kèm da thì các ban này sẽ biến mất. Trình tự xuất hiện ban từ sau tai, gáy ra trước mặt, cổ rồi lan dần toàn thân, tứ chi, lòng bàn chân, lòng bàn tay. Khi ban mọc khắp cơ thể cũng là lúc thân nhiệt sẽ giảm xuống.</p>
+        <h2>Giai đoạn hồi phục</h2>
+        <p>Màu sắc các nốt ban nhạt dần rồi chuyển sang màu xám, bong vảy phần dạng màu sẫm để lại vết thâm trên da. Trình tự lặn của ban giống như lúc nó xuất hiện. Một số trường hợp sau khi hết ban sẽ bị ho kéo dài 1 - 2 tuần.</p>
+        <img alt="" src="images/trieuchungbenhsoi.jpg" width="800" height="400">
+        <h1>Nguyên nhân bệnh sởi</h1>
+        <p>Sởi là bệnh truyền nhiễm cấp tính qua đường hô hấp do virus thuộc giống Morbillivirus, họ <i>Paramyxoviridae</i> gây ra.</p>
+        <p>Virus sởi có 2 kháng nguyên: Kháng nguyên tan hồng cầu (Hemolysin) và kháng nguyên ngưng kết hồng cầu (Hemagglutinin).</p>
+        <p>Virus sởi sau khi xâm nhập qua niêm mạc đường hô hấp hoặc kết mạc, bắt đầu nhân lên ở tế bào biểu mô và lây lan đến các hạch bạch huyết. Sau đó, virus vào máu và lan đến lưới nội mô khác.</p>
+        <img src="images/thac-mac-ve-benh-soi.jpeg" alt="" width="800" height="400">
+        <h1>Đối tượng nguy cơ</h1>
+        <h2>Những ai có nguy cơ mắc phải sởi :</h2>
+        <p>Sởi có thể xảy ra ở bất cứ ai, bất cứ độ tuổi nào. Đặc biệt, trẻ em dưới 5 tuổi.</p>
+        <h2>Yếu tố làm tăng nguy cơ mắc phải sởi :</h2>
+        <p> Có rất nhiều yếu tố có thể tăng nguy cơ mắc bệnh này, như:</p>
+        <ul>
+            <li>Sởi rất dễ lây lan, sự lây truyền xảy ra khi tiếp xúc giữa người với người cũng như lây lan trong không khí. Sởi có thể lây truyền trong không gian nhỏ, ngay cả khi không tiếp xúc giữa người với người;</li>
+            <li>Ở khu vực ôn đới, tỷ lệ mắc sởi cao nhất vào cuối mùa đông và đầu mùa xuân;</li>
+            <li>Người có nguy cơ mắc bệnh sởi: Trẻ quá nhỏ chưa đến tuổi chủng ngừa, những người chưa được chủng ngừa;</li>
+            <li>Du lịch đến khu vực lưu hành sởi hoặc tiếp xúc những người bị sởi đến từ các khu vực này sẽ làm tăng nguy cơ phơi nhiễm sởi;</li>
+            <li>Nhóm người nguy cơ cao mắc biến chứng của sởi: Bệnh nhân suy giảm miễn dịch, người bị thiếu vitamin A hoặc tình trạng dinh dưỡng kém, phụ nữ có thai và người ở độ tuổi quá cao.</li>
+        </ul>
+        <h1>Chẩn đoán bệnh sởi</h1>
+        <p>Chẩn đoán bệnh sởi thường dựa trên triệu chứng lâm sàng và lịch sử tiếp xúc với người mắc bệnh. Bác sĩ có thể yêu cầu xét nghiệm máu để xác định có sự hiện diện của kháng thể IgM sởi hoặc xác định nồng độ virus sởi.</p>
+        <p>Thông thường, sởi rất dễ bị nhầm lẫn với Rubella do có nhiều triệu chứng giống nhau. Để có thể phân biệt được hai căn bệnh này, có thể dựa vào một số điểm đặc trưng sau.</p>
+        <table>
+            <tr>
+                <th>Bệnh sởi</th>
+                <th><a href="#">Bệnh Rubella</a></th>
+            </tr>
+            <tr>
+                <td>
+                    <p>- Triệu chứng của bệnh có thể kéo dài lên đến 10 ngày.</p>
+                    <ul>
+                        <li>Phát ban nổi rõ thành từng đốm, lành vẫn có thể để lại dấu vết;</li>
+                        <li>Sốt cao có thể lên đến 40°C;</li>
+                        <li>Có giai đoạn tiền triệu chứng đặc trưng với các biểu hiện như sốt, chảy nước mũi, ho khan, viêm kết mạc.</li>
+                    </ul>
+                </td>
+                <td>
+                    <p>- Triệu chứng bệnh có thể kéo dài khoảng 5 ngày.</p>
+                    <ul>
+                        <li>Phát ban nhẹ, mờ nhanh, sau khi khỏi ban biến mất hoàn toàn;</li>
+                        <li>Sốt nhẹ;</li>
+                        <li>Không có giai đoạn tiền triệu chứng.</li>
+                    </ul>
+                </td>
+            </tr>
+        </table>
+        <h1>Phòng ngừa bệnh sởi</h1>
+        <p>Do tính chất lây lan nhanh chóng và dễ dàng bùng phát thành dịch của Sởi, Bộ Y tế khuyến cáo mỗi người dân nên chủ động phòng ngừa bệnh này bằng cách:</p>
+        <ul>
+            <li>Tiêm vacxin phòng bệnh.</li>
+            <li>Mỗi ngày cần vệ sinh sạch sẽ đường mũi, họng, mắt bằng nước muối sinh lý.</li>
+            <li>Không dùng chung vật dụng cá nhân với người bị sởi.</li>
+            <li>Làm sạch đồ chơi hay vật dụng bị nghi ngờ ô nhiễm dịch tiết mũi họng của người bệnh bằng nước diệt khuẩn hoặc xà phòng với nước sạch.</li>
+            <li>Vệ sinh sạch sẽ môi trường sống, các bề mặt nghi ngờ tiếp xúc với người bệnh.</li>
+            <li>Mở cửa sổ, cửa chính cho thông thoáng, để ánh nắng chiếu vào phòng ngủ, phòng học, phòng làm việc,…</li>
+            <li>Trẻ nhỏ bị sởi cần được nghỉ học để tránh lây cho các bạn.</li>
+            <li>Tránh tập trung nơi đông người, nơi chật hẹp hoặc ổ dịch.</li>
+            <li>Tránh tiếp xúc với người bị sởi, nếu buộc phải tiếp xúc thì cần đeo khẩu trang y tế và găng tay.</li>
+            <li>Nhanh chóng đến cơ sở y tế uy tín khi nghi ngờ các triệu chứng của bệnh Sởi để nhanh chóng được chẩn đoán đúng bệnh và có hướng điều trị hiệu quả.</li>
+        </ul>
+        <img src="images/7-loai-benh-duoc-tiem-chung-mien-phi-cho-tre-em-03.jpeg" alt="" width="800" height="400">
+        <h1>Điều trị bệnh sởi</h1>
+        <p>Việc điều trị bệnh sởi mang tính chất hỗ trợ, không có liệu pháp kháng virus sởi cụ thể được chấp thuận để điều trị bệnh sởi.</p>
+        <p><b>Nguyên tắc điều trị: </b>Cách ly bệnh nhân sởi.</p>
+        <h3>Biện pháp điều trị:</h3>
+        <ul>
+            <li>Điều trị hỗ trợ</li>
+            <ul>
+                <li>Vệ sinh miệng họng, da, mắt.</li>
+                <li>Hạ sốt.</li>
+                <li>Cung cấp đầy đủ dinh dưỡng.</li>
+                <li>Bổ sung vitamin A: </li>
+            </ul>
+        </ul>
+        <ul>
+            <li>Điều trị biến chứng:</li>
+            <ul>
+                <li>Điều trị kháng sinh khi bội nhiễm vi khuẩn./li>
+                <li>Hạn chế truyền dịch khi có biến chứng viêm phổi, viêm não hoặc viêm cơ tim.</li>
+                <li>Điều trị hỗ trợ duy trì chức năng sống cho bệnh nhân khi viêm màng não cấp tính.</li>
+            </ul>
+        </ul>
+        <i>Xin lưu ý: Thông tin trong bài viết chỉ mang tính chất tham khảo. Độc giả vui lòng liên hệ với Bác sĩ, Dược sĩ hoặc chuyên viên y tế để được tư vấn cụ thể và chính xác nhất.</i>
+    </div>
+
+    <br><br><hr class="hr-footer">
+    <footer class="footer">
+        <div class="container">
+            <div class="listed">
+                <div class="list">
+                    <h3>About nhà thuốc</h3>
+                        <a href="#">Giới thiệu</a><br>
+                        <a href="#">Hệ thống cửa hàng</a><br>
+                        <a href="#">Giấy phép kinh doanh</a><br>
+                        <a href="#">Quy chế hoạt động</a><br>
+                        <a href="#">Chính sách đổi trả</a><br>
+                        <a href="#">Câu hỏi thường gặp</a><br>
+                        <a href="#">Sitemap</a><br>
+                </div>
+                <div class="list">
+                    <h3>Danh mục</h3>
+                        <a href="#">Thuốc</a><br>
+                        <a href="#">Tra cứu bệnh</a><br>
+                        <a href="#">Thực phẩm chức năng</a><br>
+                        <a href="#">Chăm sóc cá nhân</a><br>
+                        <a href="#">Mẹ và Bé</a><br>
+                        <a href="#">Chăm sóc sắc đẹp</a><br>
+                        <a href="#">Thiết bị y tế</a><br>
+                        <a href="#">Sản phẩm tiện lợi</a><br>
+                        <a href="#">Doanh nghiệp</a><br>
+                        <a href="#">Nhãn hàng</a><br>
+                        <a href="#">Khuyến mãi HOT</a><br>
+                        <a href="#">Góc sức khỏe</a><br>
+                </div>
+                <div class="list">
+                    <h3>Tổng đài CSKH</h3>
+                        <a href="#">Hỗ trợ đặt hàng : <span style="color: blue;">1800 6821</span></a><br><br>
+                    <h3>Ngôn ngữ</h3>
+                    <a href="">Tiếng Việt</a><br>
+                    <a href="">Tiếng Anh</a><br>
+                    <a href="">Tiếng Trung</a><br>
+                </div>
+                <div class="list">
+                    <h3>Theo dõi chúng tôi trên</h3>
+                    <ul>
+                        <li><a href="#"><img src="https://prod-cdn.pharmacity.io/e-com/images/static-website/20240706163158-0-facebook.svg" alt=""> Facebook</a></li>
+                        <li><a href="#"><img src="https://prod-cdn.pharmacity.io/e-com/images/static-website/20240706163159-0-youtube.svg" alt=""> Youtube</a></li>
+                        <li><a href="#"><img src="https://prod-cdn.pharmacity.io/e-com/images/static-website/20240809162128-0-zalo.svg" width="20px"> Zalo</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="../trangchu.js"></script>
+    </body>
+    </html>
+                
