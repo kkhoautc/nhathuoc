@@ -7,93 +7,93 @@
   <link rel="stylesheet" href="cart.css">
  </head>
  <body>
-    <header class="header">
-        <div class="container">
-            <div style="width: 20%;" class="left">
-                <a href="http://127.0.0.1:5500/"><img class="logo" src="logo.jpg" alt="logo nha thuoc" style="width: 19%;"></a>
-                <a style="text-decoration: none; color: black;" href="http://127.0.0.1:5500/"><span style="text-align: center;font-size: 25px;">Nhà Thuốc</span></a>
-            </div>
-            <div class="search-bar">
-                <input type="text" placeholder="Tìm thuốc, triệu chứng, vitamin và thực phẩm chức năng" class="search-input">
-                <button class="search-btn">Search</button>
-                
-                <button style="background-color: #0096d6;border: none;margin-left: 20px;" id="opencnoti"><img style="width: 30px;" src="noti.png" alt=""></button>
-                <a href="#noti"><img class="noti" src="cart.png" alt="thongbap"></a> 
-                <div class="overlay" id='popnoti'>
-                    <div class="popup" style="height: 60%;">
-                        <button id="closenoti" style="float: right;">x</button>
-                        <h3>Thông báo</h3>
-                        <br>
-                      <p>bạn khong co thong bao nao</p>
-                    </div>
-                    </div>
-            </div>
-            <div class="auth-buttons">
-                    <button class="btn auth-btn" id="openPopup">Đăng nhập</button>
-                    <div class="overlay" id="popupOverlay">
-                        <div class="popup">
-                            <button id="closePopup" style="float: right;">x</button>
-                          <h2>Đăng nhập</h2>
+  <header class="header">
+    <div class="container">
+        <div style="width: 20%;" class="left">
+            <a href="index.html"><img class="logo" src="images/logo.jpg" alt="logo nha thuoc" style="width: 19%;"></a>
+            <a style="text-decoration: none; color: black;" href="index.html"><span style="text-align: center;font-size: 25px;">Nhà Thuốc</span></a>
+        </div>
+        <div class="search-bar">
+            <input type="text" placeholder="Tìm thuốc, triệu chứng, vitamin và thực phẩm chức năng" class="search-input">
+            <button class="search-btn">Search</button>
+            
+            <button style="background-color: #0096d6;border: none;margin-left: 20px;" id="opencnoti"><img style="width: 30px;" src="./images/noti.png" alt="thông báo" class="noti"></button>
+            <a href="cart.html"><img class="noti" src="./images/cart.png" alt="giỏ hàng"></a> 
+            <div class="overlay" id='popnoti'>
+                <div class="popup" style="height: 60%;">
+                    <button id="closenoti" style="float: right;">x</button>
+                    <h3>Thông báo</h3>
+                    <br>
+                  <p>bạn khong co thong bao nao</p>
+                </div>
+                </div>
+        </div>
+        <div class="auth-buttons">
+                <button class="btn auth-btn" id="openPopup">Đăng nhập</button>
+                <div class="overlay" id="popupOverlay">
+                    <div class="popup">
+                        <button id="closePopup" style="float: right;">x</button>
+                      <h2>Đăng nhập</h2>
+                      <form>
+                        <input class="nhap-text required" type="text" name="fname" placeholder="Tên tài khoản" id="namedn"><br>
+                        <input class="nhap-text required" type="text" name="fname" placeholder="Mật khẩu" id="passdn"><br>
+                      </form>
+                      <a style="margin-right: 50px; float: right;" href="http://127.0.0.1:5500/quenmk.html">Quên mật khẩu ?</a>
+                      <br><br>
+                      <button class="dang-nhap" onclick="dangnhap()">Đăng nhập ngay</button><br>
+                      <button class="dang-ki" id="dkOpen">Tạo tài khoản mới</button>
+                      <div class="overlaydk" id="dkiOverlay">
+                        <div class="popupdk">
+                            <button id="dkClose" style="float: right;">x</button>
+                          <h2>Đăng Kí</h2>
                           <form name="myForm" action="" onsubmit="return validateForm()" method="post">
                             <input class="nhap-text" type="text" name="fname" placeholder="Tên tài khoản">
                             <input class="nhap-text" type="text" name="fname" placeholder="Mật khẩu">
+                            <input type="text" class="nhap-text" placeholder="Nhập lại mật khẩu">
+                            <input type="text" class="nhap-text" placeholder="Nhập email của bạn">
                           </form>
-                          <a style="margin-right: 50px; float: right;" href="http://127.0.0.1:5500/quenmk.html">Quên mật khẩu ?</a>
                           <br><br>
-                          <button class="dang-nhap" id="closePopup" onclick="dangnhap()">Đăng nhập ngay</button><br>
-                          <button class="dang-ki" id="dkOpen">Tạo tài khoản mới</button>
-                          <div class="overlaydk" id="dkiOverlay">
-                            <div class="popupdk">
-                                <button id="dkClose" style="float: right;">x</button>
-                              <h2>Đăng Kí</h2>
-                              <form name="myForm" action="" onsubmit="return validateForm()" method="post">
-                                <input class="nhap-text" type="text" name="fname" placeholder="Tên tài khoản">
-                                <input class="nhap-text" type="text" name="fname" placeholder="Mật khẩu">
-                                <input type="text" class="nhap-text" placeholder="Nhập lại mật khẩu">
-                                <input type="text" class="nhap-text" placeholder="Nhập email của bạn">
-                              </form>
-                              <br><br>
-                              <button class="dang-ki" id="dkClose" onclick="dangki()">Đăng Kí</button><br>
-                          <br><br>
-                        </div>
-                        </div>
-                        
+                          <button class="dang-ki" id="dkClose" onclick="dangki()">Đăng Kí</button><br>
+                      <br><br>
                     </div>
-            </div>
-            
-        </div>
-    
-        </header>
-        <nav class="nav">
-            <div class="container">
-                <div class="menu">
-                    <a href="#">
-                        Danh mục
-                       </a>
-                       <a href="#">
-                        Thuốc
-                       </a>
-                       <a href="#">
-                        Trả cứu bệnh
-                       </a>
-                       <a href="#">
-                        Thực phẩm chức năng
-                       </a>
-                       <a href="#">
-                        Mẹ và bé
-                       </a>
-                       <a href="#">
-                        Doanh nghiệp
-                       </a>
-                       <a href="#">
-                        Nhận hàng Pharmacy
-                       </a>
-                       <a href="#">
-                        Chăm sóc cá nhân
-                       </a>
+                    </div>
+                    
                 </div>
+        </div>
+        
+    </div>
+
+    </header>
+    <nav class="nav">
+        <div class="container">
+            <div class="menu">
+                <a href="#">
+                    Danh mục
+                   </a>
+                   <a href="./nav/thuoc.html">
+                    Thuốc
+                   </a>
+                   <a href="./nav/tracuubenh.html">
+                    Trả cứu bệnh
+                   </a>
+                   <a href="./nav/thucphamchucnang.html">
+                    Thực phẩm chức năng
+                   </a>
+                   <a href="./nav/mevabe.html">
+                    Mẹ và bé
+                   </a>
+                   <a href="./cata/doanhnghiep.html">
+                    Doanh nghiệp
+                   </a>
+                   <a href="./nav/chamsocsacdep.html">
+                    Chăm sóc sắc đẹp
+                   </a>
+                   <a href="./nav/chamsoccanhan.html">
+                    Chăm sóc cá nhân
+                   </a>
             </div>
-        </nav><br>
+        </div>
+    </nav><br>
   <div class="container">
    <div class="cart">
     <div class="cart-header">
