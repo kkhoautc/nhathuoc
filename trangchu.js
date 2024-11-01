@@ -89,15 +89,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // Các hàm thông báo
-    window.dangnhap = function() {
-        alert("Bạn đã đăng nhập thành công");
-        window.location.href = "http://127.0.0.1:5500/";
-    }
 
-    window.dangki = function() {
-        alert("Bạn đã tạo tài khoản thành công");
-        window.location.href = "http://127.0.0.1:5500/";
-    }
 
     window.giohang = function() {
         alert("Bạn đã thêm vào giỏ hàng thành công");
@@ -217,7 +209,34 @@ function resetAutoSlide() {
 showSlide(currentSlide);
 
 
-
+function dangnhap() {
+    var username = document.getElementById("namedn").value;
+    var password = document.getElementById("passdn").value;
+    
+    if (username === "" || password === "") {
+        alert("Vui lòng nhập đầy đủ tên tài khoản và mật khẩu.");
+        return false;
+    } else {
+        alert("Đăng nhập thành công!");
+        // Thực hiện các hành động đăng nhập
+        window.location.href="index.html"
+    }
+}
+function dangki() {
+    var username = document.getElementById("namedk").value;
+    var password = document.getElementById("passdk").value;
+    var pass = document.getElementById("repass").value;
+    var mail = document.getElementById("mail").value
+    
+    if (username === "" || password === ""||pass===""||mail==="") {
+        alert("Vui lòng nhập đầy đủ thông tin.");
+        return false;
+    } else {
+        alert("Đăng kí thành công!");
+        // Thực hiện các hành động đăng nhập
+    }
+    window.location.href="index.html";
+}
 
 
 //
