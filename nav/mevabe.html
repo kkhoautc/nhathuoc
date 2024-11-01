@@ -30,41 +30,41 @@
                     </div>
                     </div>
             </div>
-            <div class="auth-buttons">
-                    <button class="btn auth-btn" id="openPopup">Đăng nhập</button>
-                    <div class="overlay" id="popupOverlay">
-                        <div class="popup">
-                            <button id="closePopup" style="float: right;">x</button>
-                          <h2>Đăng nhập</h2>
-                          <form>
-                            <input class="nhap-text required" type="text" name="fname" placeholder="Tên tài khoản" id="namedn"><br>
-                            <input class="nhap-text required" type="text" name="fname" placeholder="Mật khẩu" id="passdn"><br>
+           <div class="auth-buttons">
+                <button class="btn auth-btn" id="openPopup">Đăng nhập</button>
+                <div class="overlay" id="popupOverlay">
+                    <div class="popup">
+                        <button id="closePopup" style="float: right;">x</button>
+                      <h2>Đăng nhập</h2>
+                      <form>
+                        <input class="nhap-text required" type="text" name="fname" placeholder="Tên tài khoản" id="namedn"><br>
+                        <input class="nhap-text required" type="text" name="fname" placeholder="Mật khẩu" id="passdn"><br>
+                      </form>
+                      <a style="margin-right: 50px; float: right;" href="quenmk.html">Quên mật khẩu ?</a>
+                      <br><br>
+                      <button class="dang-nhap" onclick="return dangnhap()">Đăng nhập ngay</button><br>
+                      <button class="dang-ki" id="dkOpen">Tạo tài khoản mới</button>
+                      <div class="overlaydk" id="dkiOverlay">
+                        <div class="popupdk">
+                            <button id="dkClose" style="float: right;">x</button>
+                          <h2>Đăng Kí</h2>
+                          <form name="myForm" action="" onsubmit="return validateForm()" method="post">
+                            <input class="nhap-text" type="text" name="fname" placeholder="Tên tài khoản" id="namedk">
+                            <input class="nhap-text" type="text" name="fname" placeholder="Mật khẩu" id="passdk">
+                            <input type="text" class="nhap-text" placeholder="Nhập lại mật khẩu" id="repass">
+                            <input type="text" class="nhap-text" placeholder="Nhập email của bạn" id="mail">
                           </form>
-                          <a style="margin-right: 50px; float: right;" href="http://127.0.0.1:5500/quenmk.html">Quên mật khẩu ?</a>
                           <br><br>
-                          <button class="dang-nhap" onclick="dangnhap()">Đăng nhập ngay</button><br>
-                          <button class="dang-ki" id="dkOpen">Tạo tài khoản mới</button>
-                          <div class="overlaydk" id="dkiOverlay">
-                            <div class="popupdk">
-                                <button id="dkClose" style="float: right;">x</button>
-                              <h2>Đăng Kí</h2>
-                              <form name="myForm" action="" onsubmit="return validateForm()" method="post">
-                                <input class="nhap-text" type="text" name="fname" placeholder="Tên tài khoản">
-                                <input class="nhap-text" type="text" name="fname" placeholder="Mật khẩu">
-                                <input type="text" class="nhap-text" placeholder="Nhập lại mật khẩu">
-                                <input type="text" class="nhap-text" placeholder="Nhập email của bạn">
-                              </form>
-                              <br><br>
-                              <button class="dang-ki" id="dkClose" onclick="dangki()">Đăng Kí</button><br>
-                          <br><br>
-                        </div>
-                        </div>
-                        
+                          <button class="dang-ki" id="dkClose" onclick="return dangki()">Đăng Kí</button><br>
+                      <br><br>
                     </div>
-            </div>
-            
+                    </div>
+                    
+                </div>
         </div>
-      
+        
+    </div>
+
         </header>
     <nav class="nav">
         <div class="container">
